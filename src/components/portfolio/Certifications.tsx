@@ -4,6 +4,7 @@ import { SectionLabel } from "./About";
 import certCisco from "@/assets/cert-cisco.jpg";
 import certPrompt from "@/assets/cert-prompt.jpg";
 import certCyber from "@/assets/cert-cybersecurity.jpg";
+import certBI from "@/assets/cert-bi.jpg";
 
 type Cert = {
   title: string;
@@ -40,8 +41,8 @@ const certs: Cert[] = [
     title: "Data Analytics & Business Intelligence",
     issuer: "DigiSkills.pk (DSTP 3.0)",
     date: "Dec 2025",
-    type: "pdf",
-    src: "/certs/Business_Intelligence_Certificate.pdf",
+    type: "image",
+    src: certBI,
   },
   {
     title: "Freelancing",
