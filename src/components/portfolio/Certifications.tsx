@@ -5,6 +5,7 @@ import certCisco from "@/assets/cert-cisco.jpg";
 import certPrompt from "@/assets/cert-prompt.jpg";
 import certCyber from "@/assets/cert-cybersecurity.jpg";
 import certBI from "@/assets/cert-bi.jpg";
+import certFreelancing from "@/assets/cert-freelancing.jpg";
 
 type Cert = {
   title: string;
@@ -46,10 +47,10 @@ const certs: Cert[] = [
   },
   {
     title: "Freelancing",
-    issuer: "DigiSkills.pk",
+    issuer: "DigiSkills.pk (DSTP 3.0)",
     date: "Dec 2025",
-    type: "pdf",
-    src: "/certs/Freelancing_Certificate.pdf",
+    type: "image",
+    src: certFreelancing,
   },
 ];
 
