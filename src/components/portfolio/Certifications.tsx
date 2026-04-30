@@ -3,6 +3,7 @@ import { FileText, X, ExternalLink } from "lucide-react";
 import { SectionLabel } from "./About";
 import certCisco from "@/assets/cert-cisco.jpg";
 import certPrompt from "@/assets/cert-prompt.jpg";
+import certCyber from "@/assets/cert-cybersecurity.jpg";
 
 type Cert = {
   title: string;
@@ -27,6 +28,13 @@ const certs: Cert[] = [
     date: "Sept 2025",
     type: "image",
     src: certPrompt,
+  },
+  {
+    title: "Cyber Security — Summer Short Course",
+    issuer: "PMAS Arid Agriculture University (UIIT)",
+    date: "2024",
+    type: "image",
+    src: certCyber,
   },
   {
     title: "Data Analytics & Business Intelligence",
