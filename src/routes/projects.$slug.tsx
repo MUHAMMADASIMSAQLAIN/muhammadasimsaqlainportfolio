@@ -11,11 +11,11 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   head: ({ loaderData }) => {
     const title = loaderData
-      ? `${loaderData.name} — ${loaderData.tagline} | Muhammad Asim S.`
-      : "Case study | Muhammad Asim S.";
+      ? `${loaderData.name} — ${loaderData.tagline} | Muhammad Asim Saqlain`
+      : "Case study | Muhammad Asim Saqlain";
     const description = loaderData
       ? loaderData.solution.slice(0, 155)
-      : "AI automation case study by Muhammad Asim S., AI Automation Engineer.";
+      : "AI automation case study by Muhammad Asim Saqlain, AI Automation Engineer.";
     return {
       meta: [
         { title },

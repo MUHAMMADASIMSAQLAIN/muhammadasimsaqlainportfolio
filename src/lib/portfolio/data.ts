@@ -1,7 +1,7 @@
 export const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074e?mp_source=share";
 
 export const profile = {
-  name: "Muhammad Asim S.",
+  name: "Muhammad Asim Saqlain",
   title: "AI Automation Engineer | AI Agents | n8n | RAG | LLM Integration",
   location: "Chakwal, Pakistan",
   email: "asimsaqlain85@gmail.com",
