@@ -1,4 +1,4 @@
-export const UPWORK_URL = "https://www.upwork.com/freelancers/";
+export const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074e?mp_source=share";
 
 export const profile = {
   name: "Muhammad Asim S.",
