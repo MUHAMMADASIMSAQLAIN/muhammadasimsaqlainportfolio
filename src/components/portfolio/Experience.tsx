@@ -1,91 +1,57 @@
 import { SectionLabel } from "./About";
-import { Award, Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
+import { education, experience } from "@/lib/portfolio/data";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-28 relative">
+    <section id="experience" className="py-24 relative">
       <div className="mx-auto max-w-5xl px-6">
-        <SectionLabel>04 — Journey</SectionLabel>
-        <h2 className="mt-6 font-display text-4xl md:text-5xl font-bold tracking-tighter max-w-3xl">
-          Experience, education & <span className="text-gradient">credentials</span>.
+        <SectionLabel>05 — Experience</SectionLabel>
+        <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold tracking-tighter max-w-3xl">
+          Where I've <span className="text-gradient">built and shipped</span>.
         </h2>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {/* Experience */}
-          <Card icon={Briefcase} title="Experience">
-            <Item
-              title="Junior Network Engineer (Intern)"
-              meta="PMAS Arid Agriculture University · Apr 2025 – Present"
-              body="Planning, configuration & maintenance of university network infrastructure. Router/switch deployment, VPN & firewall management, secure operations."
-            />
-          </Card>
+        <div className="mt-14 space-y-5">
+          {experience.map((e) => (
+            <article key={e.role} className="rounded-2xl glass p-7">
+              <div className="flex items-start gap-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
+                  <Briefcase className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-semibold leading-snug">{e.role}</h3>
+                  <p className="text-sm text-primary mt-0.5">
+                    {e.org} · {e.period}
+                  </p>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-2.5 pl-1">
+                {e.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-[15px] text-muted-foreground leading-relaxed">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
 
-          {/* Education */}
-          <Card icon={GraduationCap} title="Education">
-            <Item
-              title="BSCS — Artificial Intelligence"
-              meta="Arid Agriculture University"
-              body="Computer Vision, Machine Learning, Data Science, Cybersecurity."
-            />
-            <Item
-              title="UIIT"
-              meta="2021"
-              body="Wireless Networking, Computer Vision and 11 more skills."
-            />
-          </Card>
-
-          {/* Certifications */}
-          <Card icon={Award} title="Certifications">
-            <Item
-              title="CCNA Wireless"
-              meta="Cisco · Sep 2024"
-              body="Network administration, wireless networking, security."
-            />
-            <Item
-              title="Data Analytics & BI"
-              meta="DigiSkills.pk · 2025"
-              body="DSTP 3.0 — turning raw data into actionable strategy."
-            />
-            <Item
-              title="Freelancing"
-              meta="DigiSkills.pk · 2025"
-              body="Platform management, client communication, project delivery."
-            />
-          </Card>
+        <div id="education" className="mt-12 scroll-mt-28">
+          <h3 className="font-display text-2xl font-semibold">Education</h3>
+          <div className="mt-5 rounded-2xl glass p-7 flex items-start gap-4">
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
+              <GraduationCap className="h-5 w-5" aria-hidden="true" />
+            </div>
+            <div>
+              <div className="font-display text-lg font-semibold">{education.degree}</div>
+              <p className="text-sm text-primary mt-0.5">
+                {education.school} · {education.period}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Card({
-  icon: Icon,
-  title,
-  children,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-2xl glass p-6 h-full">
-      <div className="flex items-center gap-3 mb-5">
-        <div className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
-          <Icon className="h-5 w-5" />
-        </div>
-        <h3 className="font-display text-lg font-semibold">{title}</h3>
-      </div>
-      <div className="space-y-5">{children}</div>
-    </div>
-  );
-}
-
-function Item({ title, meta, body }: { title: string; meta: string; body: string }) {
-  return (
-    <div className="border-l-2 border-primary/40 pl-4">
-      <div className="font-display font-semibold text-foreground leading-snug">{title}</div>
-      <div className="text-xs text-primary-glow mt-0.5">{meta}</div>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
-    </div>
   );
 }

@@ -1,56 +1,40 @@
 import { useState } from "react";
-import { FileText, X, ExternalLink } from "lucide-react";
+import { X, BadgeCheck } from "lucide-react";
 import { SectionLabel } from "./About";
-import certCisco from "@/assets/cert-cisco.jpg";
+import { certifications } from "@/lib/portfolio/data";
 import certPrompt from "@/assets/cert-prompt.jpg";
+import certCisco from "@/assets/cert-cisco.jpg";
 import certCyber from "@/assets/cert-cybersecurity.jpg";
 import certBI from "@/assets/cert-bi.jpg";
 import certFreelancing from "@/assets/cert-freelancing.jpg";
 
-type Cert = {
-  title: string;
-  issuer: string;
-  date: string;
-  type: "image" | "pdf";
-  src: string;
-  thumb?: string;
-};
+type Cert = { title: string; issuer: string; date: string; src: string };
 
-const certs: Cert[] = [
+const gallery: Cert[] = [
+  {
+    title: "Prompt Engineering with ChatGPT & Deepseek",
+    issuer: "Udemy",
+    date: "Sept 2025",
+    src: certPrompt,
+  },
+  {
+    title: "Data Analytics & Business Intelligence",
+    issuer: "DigiSkills.pk",
+    date: "Dec 2025",
+    src: certBI,
+  },
+  { title: "Freelancing", issuer: "DigiSkills.pk", date: "Dec 2025", src: certFreelancing },
   {
     title: "CISCO Certified Network Associate (CCNA)",
     issuer: "Cisco / Technologixs",
     date: "Sep 2024",
-    type: "image",
     src: certCisco,
-  },
-  {
-    title: "Prompt Engineering with ChatGPT & DeepSeek",
-    issuer: "Udemy",
-    date: "Sept 2025",
-    type: "image",
-    src: certPrompt,
   },
   {
     title: "Cyber Security — Summer Short Course",
     issuer: "PMAS Arid Agriculture University (UIIT)",
     date: "2024",
-    type: "image",
     src: certCyber,
-  },
-  {
-    title: "Data Analytics & Business Intelligence",
-    issuer: "DigiSkills.pk (DSTP 3.0)",
-    date: "Dec 2025",
-    type: "image",
-    src: certBI,
-  },
-  {
-    title: "Freelancing",
-    issuer: "DigiSkills.pk (DSTP 3.0)",
-    date: "Dec 2025",
-    type: "image",
-    src: certFreelancing,
   },
 ];
 
@@ -58,41 +42,53 @@ export function Certifications() {
   const [active, setActive] = useState<Cert | null>(null);
 
   return (
-    <section id="certifications" className="py-28 relative">
+    <section id="certifications" className="py-24 relative">
       <div className="mx-auto max-w-5xl px-6">
-        <SectionLabel>06 — Credentials</SectionLabel>
-        <h2 className="mt-6 font-display text-4xl md:text-5xl font-bold tracking-tighter max-w-3xl">
-          Verified <span className="text-gradient">certifications</span>.
+        <SectionLabel>06 — Certifications</SectionLabel>
+        <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold tracking-tighter max-w-3xl">
+          Verified <span className="text-gradient">credentials</span>.
         </h2>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {certs.map((c) => (
+        <div className="mt-12 grid sm:grid-cols-2 gap-4">
+          {certifications.map((c) => (
+            <article key={c.credentialId} className="rounded-2xl glass p-6">
+              <div className="flex items-start gap-3">
+                <BadgeCheck className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                <div>
+                  <h3 className="font-display text-lg font-semibold leading-snug">{c.title}</h3>
+                  <p className="mt-1 text-sm text-primary">
+                    {c.issuer} · {c.date}
+                  </p>
+                  <p className="mt-2 text-xs text-muted-foreground break-all">
+                    Credential ID: {c.credentialId}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <h3 className="mt-14 font-display text-xl font-semibold">Certificate gallery</h3>
+        <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {gallery.map((c) => (
             <button
               key={c.title}
+              type="button"
               onClick={() => setActive(c)}
-              className="group relative text-left rounded-2xl glass overflow-hidden hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+              aria-label={`View certificate: ${c.title}`}
+              className="group text-left rounded-2xl glass overflow-hidden hover:shadow-glow transition"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-surface">
-                {c.type === "image" ? (
-                  <img
-                    src={c.src}
-                    alt={c.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="h-full w-full grid place-items-center bg-gradient-to-br from-surface to-surface-elevated">
-                    <FileText className="h-14 w-14 text-primary-glow" />
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-              </div>
-              <div className="p-5">
-                <div className="text-xs uppercase tracking-wider text-primary-glow">{c.date}</div>
-                <h3 className="mt-1.5 font-display font-semibold leading-snug text-foreground">
-                  {c.title}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{c.issuer}</p>
+              <img
+                src={c.src}
+                alt={`${c.title} certificate issued by ${c.issuer}`}
+                loading="lazy"
+                className="h-40 w-full object-cover object-top border-b border-border"
+              />
+              <div className="p-4">
+                <div className="font-medium text-sm leading-snug">{c.title}</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {c.issuer} · {c.date}
+                </div>
               </div>
             </button>
           ))}
@@ -101,46 +97,29 @@ export function Certifications() {
 
       {active && (
         <div
-          className="fixed inset-0 z-[100] grid place-items-center bg-background/85 backdrop-blur-md p-4 md:p-10 animate-in fade-in"
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.title}
+          className="fixed inset-0 z-[60] grid place-items-center bg-background/90 p-4 backdrop-blur"
           onClick={() => setActive(null)}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[90vh] glass rounded-2xl overflow-hidden shadow-elegant"
+            className="relative max-h-[90vh] w-full max-w-3xl overflow-auto rounded-2xl glass p-3"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between border-b border-border px-5 py-3">
-              <div className="min-w-0">
-                <div className="font-display font-semibold truncate">{active.title}</div>
-                <div className="text-xs text-muted-foreground">
-                  {active.issuer} · {active.date}
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <a
-                  href={active.src}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="grid h-9 w-9 place-items-center rounded-full bg-secondary hover:bg-surface-elevated transition"
-                  aria-label="Open"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-                <button
-                  onClick={() => setActive(null)}
-                  className="grid h-9 w-9 place-items-center rounded-full bg-secondary hover:bg-surface-elevated transition"
-                  aria-label="Close"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-            <div className="bg-background h-[75vh] overflow-auto">
-              {active.type === "image" ? (
-                <img src={active.src} alt={active.title} className="w-full h-full object-contain" />
-              ) : (
-                <iframe src={active.src} title={active.title} className="w-full h-full" />
-              )}
-            </div>
+            <button
+              type="button"
+              aria-label="Close certificate viewer"
+              onClick={() => setActive(null)}
+              className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-surface-elevated text-foreground"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <img
+              src={active.src}
+              alt={`${active.title} certificate issued by ${active.issuer}`}
+              className="w-full rounded-xl"
+            />
           </div>
         </div>
       )}
