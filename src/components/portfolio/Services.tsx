@@ -1,8 +1,8 @@
-import { Bot, Workflow, Database, Plug, Mic, Server } from "lucide-react";
+import { Bot, Workflow, Database, Plug, Mic, Server, MessagesSquare } from "lucide-react";
 import { SectionLabel } from "./About";
 import { services } from "@/lib/portfolio/data";
 
-const icons = { bot: Bot, workflow: Workflow, database: Database, plug: Plug, mic: Mic, server: Server };
+const icons = { bot: Bot, workflow: Workflow, database: Database, plug: Plug, mic: Mic, server: Server, messages: MessagesSquare };
 
 export function Services() {
   return (
