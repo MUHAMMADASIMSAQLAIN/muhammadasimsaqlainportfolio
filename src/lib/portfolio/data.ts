@@ -43,6 +43,11 @@ export const services = [
     title: "Python / FastAPI Backends",
     desc: "Secure REST APIs and microservices with Python, FastAPI and Flask — authentication, JWT/RBAC, MongoDB and deployment-ready structure.",
   },
+  {
+    icon: "messages",
+    title: "AI Chatbots & Customer Support",
+    desc: "Customer-facing chatbots for WhatsApp, web and messaging channels that answer questions from your own knowledge base and hand off when needed.",
+  },
 ] as const;
 
 export type Project = {
