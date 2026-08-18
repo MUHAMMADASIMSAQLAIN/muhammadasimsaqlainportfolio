@@ -3,27 +3,27 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Services } from "@/components/portfolio/Services";
+import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Experience } from "@/components/portfolio/Experience";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 
+const TITLE = "Muhammad Asim S. — AI Automation Engineer | AI Agents, n8n, RAG";
+const DESCRIPTION =
+  "AI Automation Engineer building AI agents, n8n automations, RAG systems, voice AI workflows and Python/FastAPI backends for real business operations.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Muhammad Asim Saqlain — Full-Stack AI Engineer" },
-      {
-        name: "description",
-        content:
-          "Full-Stack AI Engineer building custom AI agents, RAG systems and n8n automations. Python, LangChain, MLOps. Available for freelance & full-time work.",
-      },
-      { property: "og:title", content: "Muhammad Asim Saqlain — Full-Stack AI Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Custom AI agents, RAG systems, and workflow automation that turn manual chaos into intelligent 24/7 systems.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
   }),
   component: Index,
@@ -37,6 +37,7 @@ function Index() {
         <Hero />
         <About />
         <Services />
+        <Projects />
         <Skills />
         <Experience />
         <Certifications />
