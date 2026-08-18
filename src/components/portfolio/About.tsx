@@ -19,7 +19,7 @@ export function About() {
             <div className="absolute -inset-4 bg-gradient-primary rounded-3xl opacity-20 blur-2xl" />
             <img
               src={avatar}
-              alt="Portrait of Muhammad Asim S., AI Automation Engineer"
+              alt="Portrait of Muhammad Asim Saqlain, AI Automation Engineer"
               width={768}
               height={768}
               loading="lazy"

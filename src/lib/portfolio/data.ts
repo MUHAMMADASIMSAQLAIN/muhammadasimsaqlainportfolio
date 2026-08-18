@@ -1,7 +1,7 @@
 export const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074e?mp_source=share";
 
 export const profile = {
-  name: "Muhammad Asim S.",
+  name: "Muhammad Asim Saqlain",
   title: "AI Automation Engineer | AI Agents | n8n | RAG | LLM Integration",
   location: "Chakwal, Pakistan",
   email: "asimsaqlain85@gmail.com",
@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317",
   github: "https://github.com/MUHAMMADASIMSAQLAIN",
   valueProp:
-    "I design and ship AI agents, RAG systems, voice AI workflows and n8n automations backed by production-ready Python/FastAPI services — so business processes run end to end without manual handoffs.",
+    "I build AI agents, RAG systems, voice AI and workflow automations that connect LLMs to real business processes — backed by production-ready Python/FastAPI services.",
 };
 
 export const services = [
@@ -42,6 +42,11 @@ export const services = [
     icon: "server",
     title: "Python / FastAPI Backends",
     desc: "Secure REST APIs and microservices with Python, FastAPI and Flask — authentication, JWT/RBAC, MongoDB and deployment-ready structure.",
+  },
+  {
+    icon: "messages",
+    title: "AI Chatbots & Customer Support",
+    desc: "Customer-facing chatbots for WhatsApp, web and messaging channels that answer questions from your own knowledge base and hand off when needed.",
   },
 ] as const;
 
@@ -284,6 +289,80 @@ export const projects: Project[] = [
       "Built the n8n webhook workflow and response handling.",
     ],
   },
+  {
+    slug: "ai-email-aggregator",
+    name: "AI Email Aggregator",
+    tagline: "Automated inbox triage and summarisation",
+    problem:
+      "Important messages get buried in a busy inbox, and reading every email to find what matters takes time each day.",
+    solution:
+      "An automation that pulls messages through the Gmail API, uses an LLM to classify and summarise them, and delivers a consolidated digest so only the relevant items need attention.",
+    features: [
+      "Gmail API email retrieval",
+      "LLM-based classification and summarisation",
+      "Consolidated digest output",
+      "n8n scheduling and routing",
+    ],
+    architecture: [
+      "A scheduled n8n workflow fetches new messages via the Gmail API.",
+      "Each message is passed to an LLM for classification and summarisation.",
+      "Results are grouped into a single digest.",
+      "The digest is delivered back through email or a messaging channel.",
+    ],
+    stack: ["n8n", "Gmail API", "LLM APIs", "Python", "Webhooks"],
+    role: [
+      "Built the ingestion workflow and Gmail integration.",
+      "Designed the classification and summarisation prompts.",
+      "Implemented digest formatting and delivery.",
+    ],
+  },
+  {
+    slug: "student-success-prediction",
+    name: "Student Success Prediction",
+    tagline: "Machine learning model on academic performance data",
+    problem:
+      "Academic performance data sits unused, so at-risk students are only identified after results are published.",
+    solution:
+      "A machine learning pipeline that cleans academic data, engineers features and trains classification models to predict student outcomes, with evaluation of model performance.",
+    features: [
+      "Data cleaning and preprocessing",
+      "Feature engineering on academic attributes",
+      "Classification model training",
+      "Model evaluation and comparison",
+    ],
+    architecture: [
+      "Raw academic data is cleaned and preprocessed.",
+      "Features are engineered and encoded.",
+      "Models are trained and cross-validated.",
+      "Metrics are compared to select the final model.",
+    ],
+    stack: ["Python", "scikit-learn", "Pandas", "NumPy", "Machine Learning"],
+    role: [
+      "Built the data preprocessing and feature pipeline.",
+      "Trained and evaluated the classification models.",
+    ],
+  },
+  {
+    slug: "flask-todo-app",
+    name: "Flask Todo App",
+    tagline: "CRUD web application with Flask and SQL",
+    problem: "A simple, self-hosted way to track tasks with persistent storage and a clean interface.",
+    solution:
+      "A Flask web application with full CRUD task management, SQL persistence and server-rendered templates.",
+    features: [
+      "Create, read, update and delete tasks",
+      "SQL database persistence",
+      "Server-rendered templates",
+      "Responsive interface",
+    ],
+    architecture: [
+      "Flask routes handle CRUD requests.",
+      "An ORM layer persists tasks to a SQL database.",
+      "Templates render the task views server-side.",
+    ],
+    stack: ["Python", "Flask", "SQL", "SQLAlchemy", "HTML", "CSS"],
+    role: ["Built the Flask application, data model and interface."],
+  },
 ];
 
 export const skillGroups = [
@@ -295,7 +374,10 @@ export const skillGroups = [
       "Generative AI",
       "Large Language Models",
       "LLM Prompt Engineering",
+      "AI Prompt Engineering",
       "Retrieval Augmented Generation",
+      "LangChain",
+      "MCP",
       "OpenAI API",
       "Gemini API",
       "Natural Language Processing",
@@ -304,16 +386,43 @@ export const skillGroups = [
   },
   {
     title: "Automation",
-    items: ["n8n", "Automated Workflow", "Zapier", "Make.com", "Webhooks", "Python Automation"],
+    items: [
+      "n8n",
+      "AI Workflow Automation",
+      "Zapier",
+      "Make.com",
+      "Webhooks",
+      "Python Automation",
+      "Gmail API",
+      "Google Calendar API",
+      "Google Sheets API",
+    ],
   },
   {
     title: "Backend",
-    items: ["Python", "FastAPI", "Flask", "REST API Development", "Microservices", "JWT / RBAC"],
+    items: [
+      "Python",
+      "FastAPI",
+      "Flask",
+      "API Development",
+      "REST APIs",
+      "Microservices",
+      "JWT / RBAC",
+    ],
   },
-  { title: "Databases", items: ["MongoDB", "Supabase pgvector", "Vector Databases", "Embeddings"] },
   {
-    title: "ML & Computer Vision",
-    items: ["Machine Learning", "YOLOv8", "Computer Vision", "Document Processing"],
+    title: "Data & Databases",
+    items: ["MongoDB", "SQL", "Pinecone", "Supabase Vector Store", "Vector Databases", "Embeddings"],
+  },
+  {
+    title: "AI / ML",
+    items: [
+      "Machine Learning",
+      "YOLOv8",
+      "Computer Vision",
+      "Document Processing",
+      "ElevenLabs / Voice AI",
+    ],
   },
   { title: "Frontend", items: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Chart.js"] },
 ];

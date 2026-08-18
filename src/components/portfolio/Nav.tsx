@@ -50,7 +50,7 @@ export function Nav() {
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-primary-foreground text-sm">
               MA
             </span>
-            <span className="hidden sm:inline text-foreground">Muhammad Asim S.</span>
+            <span className="hidden sm:inline text-foreground">Muhammad Asim Saqlain</span>
           </a>
 
           <nav
