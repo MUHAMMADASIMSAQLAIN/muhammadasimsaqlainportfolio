@@ -7,10 +7,17 @@ import certCisco from "@/assets/cert-cisco.jpg";
 import certCyber from "@/assets/cert-cybersecurity.jpg";
 import certBI from "@/assets/cert-bi.jpg";
 import certFreelancing from "@/assets/cert-freelancing.jpg";
+import certAiPython from "@/assets/cert-ai-python.jpg";
 
 type Cert = { title: string; issuer: string; date: string; src: string };
 
 const gallery: Cert[] = [
+  {
+    title: "Artificial Intelligence Using Python",
+    issuer: "DigiSkills.pk",
+    date: "Jul 2026",
+    src: certAiPython,
+  },
   {
     title: "Prompt Engineering with ChatGPT & Deepseek",
     issuer: "Udemy",
