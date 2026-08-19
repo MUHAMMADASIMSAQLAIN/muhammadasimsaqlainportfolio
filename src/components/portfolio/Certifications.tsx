@@ -13,6 +13,12 @@ type Cert = { title: string; issuer: string; date: string; src: string };
 
 const gallery: Cert[] = [
   {
+    title: "Artificial Intelligence Using Python",
+    issuer: "DigiSkills.pk",
+    date: "Jul 2026",
+    src: certAiPython,
+  },
+  {
     title: "Prompt Engineering with ChatGPT & Deepseek",
     issuer: "Udemy",
     date: "Sept 2025",
