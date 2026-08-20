@@ -1,10 +1,16 @@
 import { Mail, Phone, MapPin, Linkedin, Github, ArrowUpRight } from "lucide-react";
 import { SectionLabel } from "./About";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
+import { handleExternalClick } from "@/lib/portfolio/links";
 
 const contacts = [
   { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: profile.phone,
+    href: `tel:${profile.phone.replace(/\s/g, "")}`,
+  },
   {
     icon: Linkedin,
     label: "LinkedIn",
@@ -41,6 +47,7 @@ export function Contact() {
               href={UPWORK_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleExternalClick}
               className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform"
             >
               Hire Me on Upwork
@@ -61,6 +68,7 @@ export function Contact() {
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                onClick={handleExternalClick}
                 className="group flex items-center gap-4 rounded-xl border border-border bg-surface/60 px-5 py-4 hover:border-primary/60 hover:bg-surface-elevated transition"
               >
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-secondary text-primary">

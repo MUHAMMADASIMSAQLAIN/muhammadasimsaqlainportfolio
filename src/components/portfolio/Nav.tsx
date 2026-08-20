@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { UPWORK_URL } from "@/lib/portfolio/data";
+import { handleExternalClick } from "@/lib/portfolio/links";
 
 const links = [
   { href: "/#about", label: "About" },
@@ -69,6 +70,7 @@ export function Nav() {
               href={UPWORK_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleExternalClick}
               className="hidden sm:inline-flex rounded-full bg-gradient-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
             >
               Hire Me on Upwork
@@ -102,7 +104,10 @@ export function Nav() {
                 href={UPWORK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  handleExternalClick(e);
+                }}
                 className="mt-2 text-center rounded-full bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
               >
                 Hire Me on Upwork

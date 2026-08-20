@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { HeroVisual } from "./HeroVisual";
+import { handleExternalClick } from "@/lib/portfolio/links";
 
 const highlights = ["AI Agents", "n8n Automation", "RAG Systems", "LLM Integration", "FastAPI"];
 
@@ -37,7 +38,10 @@ export function Hero() {
             <span className="text-foreground">{profile.name}</span>
             <span className="mt-4 block text-xl font-semibold leading-snug sm:text-2xl md:text-3xl">
               <span className="text-gradient">AI Automation Engineer</span>
-              <span className="text-muted-foreground"> | AI Agents | n8n | RAG | LLM Integration</span>
+              <span className="text-muted-foreground">
+                {" "}
+                | AI Agents | n8n | RAG | LLM Integration
+              </span>
             </span>
           </h1>
 
@@ -57,16 +61,23 @@ export function Hero() {
               className="btn-shine group inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-[15px] font-semibold text-primary-foreground shadow-glow transition-transform hover:-translate-y-0.5"
             >
               View Projects
-              <ArrowRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              <ArrowRight
+                className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </a>
             <a
               href={UPWORK_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleExternalClick}
               className="group inline-flex min-h-12 items-center gap-2 rounded-full border border-border-strong bg-surface/60 px-6 py-3.5 text-[15px] font-semibold text-foreground transition-colors hover:border-primary/50 hover:bg-surface-elevated"
             >
               Hire Me on Upwork
-              <ArrowUpRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+              <ArrowUpRight
+                className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+              />
             </a>
           </div>
 
