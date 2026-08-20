@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { UPWORK_URL, projects } from "@/lib/portfolio/data";
+import { handleExternalClick } from "@/lib/portfolio/links";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -79,7 +80,10 @@ function CaseStudy() {
                   key={f}
                   className="flex gap-3 rounded-xl border border-border bg-surface/60 px-4 py-3 text-sm"
                 >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                  <CheckCircle2
+                    className="h-4 w-4 shrink-0 text-primary mt-0.5"
+                    aria-hidden="true"
+                  />
                   {f}
                 </li>
               ))}
@@ -123,6 +127,7 @@ function CaseStudy() {
                 href={UPWORK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleExternalClick}
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 font-semibold text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform"
               >
                 Hire Me on Upwork
