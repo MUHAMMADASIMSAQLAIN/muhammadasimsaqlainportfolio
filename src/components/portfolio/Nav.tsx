@@ -104,8 +104,10 @@ export function Nav() {
                 href={UPWORK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleExternalClick}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  handleExternalClick(e);
+                }}
                 className="mt-2 text-center rounded-full bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow"
               >
                 Hire Me on Upwork
