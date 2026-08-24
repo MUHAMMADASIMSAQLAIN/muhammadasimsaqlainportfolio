@@ -33,6 +33,10 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function CaseStudy() {
   const p = Route.useLoaderData();
+  const [active, setActive] = useState<number | null>(null);
+  const shots = p.screenshots ?? [];
+  const current = active !== null ? shots[active] : null;
+
 
   return (
     <div className="dark min-h-screen bg-background text-foreground antialiased">
