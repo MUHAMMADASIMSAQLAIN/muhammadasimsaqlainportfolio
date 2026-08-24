@@ -171,6 +171,7 @@ export const projects: Project[] = [
       "JWT / RBAC",
       "Python",
     ],
+    screenshots: bluewaveScreenshots,
     role: [
       "Designed the end-to-end platform architecture and data model.",
       "Built the FastAPI backend, authentication and RBAC layer.",
