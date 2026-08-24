@@ -202,6 +202,35 @@ function CaseStudy() {
           </nav>
         </article>
       </main>
+
+      {current && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={current.caption}
+          onClick={() => setActive(null)}
+          className="fixed inset-0 z-[100] grid place-items-center bg-background/90 backdrop-blur-sm p-4 md:p-10"
+        >
+          <button
+            type="button"
+            onClick={() => setActive(null)}
+            aria-label="Close image"
+            className="absolute top-5 right-5 grid h-10 w-10 place-items-center rounded-full glass text-foreground hover:bg-surface-elevated transition"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <figure onClick={(e) => e.stopPropagation()} className="max-h-full w-full max-w-5xl">
+            <img
+              src={current.src}
+              alt={current.alt}
+              className="max-h-[80vh] w-full rounded-2xl border border-border object-contain"
+            />
+            <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+              {current.caption}
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 }
