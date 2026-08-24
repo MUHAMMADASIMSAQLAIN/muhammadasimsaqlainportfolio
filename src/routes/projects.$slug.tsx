@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, X } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { UPWORK_URL, projects } from "@/lib/portfolio/data";
 import { handleExternalClick } from "@/lib/portfolio/links";
@@ -33,6 +34,10 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function CaseStudy() {
   const p = Route.useLoaderData();
+  const [active, setActive] = useState<number | null>(null);
+  const shots = p.screenshots ?? [];
+  const current = active !== null ? shots[active] : null;
+
 
   return (
     <div className="dark min-h-screen bg-background text-foreground antialiased">
@@ -64,6 +69,36 @@ function CaseStudy() {
               ))}
             </ul>
           </header>
+
+          {p.screenshots && p.screenshots.length > 0 && (
+            <Block title="Screenshots">
+              <div className="grid sm:grid-cols-2 gap-4">
+                {p.screenshots.map((s, i) => (
+                  <figure
+                    key={s.src}
+                    className="group overflow-hidden rounded-2xl border border-border bg-surface/60"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setActive(i)}
+                      className="block w-full cursor-zoom-in"
+                      aria-label={`Open larger view: ${s.caption}`}
+                    >
+                      <img
+                        src={s.src}
+                        alt={s.alt}
+                        loading="lazy"
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </button>
+                    <figcaption className="px-4 py-3 text-xs text-muted-foreground">
+                      {s.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </Block>
+          )}
 
           <Block title="Problem">
             <p className="text-muted-foreground leading-relaxed">{p.problem}</p>
@@ -167,6 +202,35 @@ function CaseStudy() {
           </nav>
         </article>
       </main>
+
+      {current && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={current.caption}
+          onClick={() => setActive(null)}
+          className="fixed inset-0 z-[100] grid place-items-center bg-background/90 backdrop-blur-sm p-4 md:p-10"
+        >
+          <button
+            type="button"
+            onClick={() => setActive(null)}
+            aria-label="Close image"
+            className="absolute top-5 right-5 grid h-10 w-10 place-items-center rounded-full glass text-foreground hover:bg-surface-elevated transition"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <figure onClick={(e) => e.stopPropagation()} className="max-h-full w-full max-w-5xl">
+            <img
+              src={current.src}
+              alt={current.alt}
+              className="max-h-[80vh] w-full rounded-2xl border border-border object-contain"
+            />
+            <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+              {current.caption}
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 }
