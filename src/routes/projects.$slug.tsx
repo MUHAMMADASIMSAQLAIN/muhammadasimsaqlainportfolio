@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, X } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { UPWORK_URL, projects } from "@/lib/portfolio/data";
 import { handleExternalClick } from "@/lib/portfolio/links";
