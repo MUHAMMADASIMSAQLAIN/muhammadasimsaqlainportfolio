@@ -65,6 +65,36 @@ function CaseStudy() {
             </ul>
           </header>
 
+          {p.screenshots && p.screenshots.length > 0 && (
+            <Block title="Screenshots">
+              <div className="grid sm:grid-cols-2 gap-4">
+                {p.screenshots.map((s, i) => (
+                  <figure
+                    key={s.src}
+                    className="group overflow-hidden rounded-2xl border border-border bg-surface/60"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setActive(i)}
+                      className="block w-full cursor-zoom-in"
+                      aria-label={`Open larger view: ${s.caption}`}
+                    >
+                      <img
+                        src={s.src}
+                        alt={s.alt}
+                        loading="lazy"
+                        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </button>
+                    <figcaption className="px-4 py-3 text-xs text-muted-foreground">
+                      {s.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </Block>
+          )}
+
           <Block title="Problem">
             <p className="text-muted-foreground leading-relaxed">{p.problem}</p>
           </Block>
