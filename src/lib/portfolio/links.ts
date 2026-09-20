@@ -10,7 +10,12 @@ export function handleExternalClick(e: MouseEvent<HTMLAnchorElement>) {
 
   if (window.self !== window.top) {
     // A user-initiated top-level navigation avoids LinkedIn/Upwork's iframe ban.
-    e.currentTarget.target = "_top";
+    e.preventDefault();
+    try {
+      window.top?.location.assign(href);
+    } catch {
+      window.open(href, "_blank", "noopener,noreferrer");
+    }
     return;
   }
 
