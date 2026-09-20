@@ -68,22 +68,22 @@ export type Project = {
 
 const bluewaveScreenshots: Screenshot[] = [
   {
-    src: "/bluewave-login.png",
+    src: "/login.png",
     caption: "Customer portal sign-in",
     alt: "BlueWave AI customer portal login screen",
   },
   {
-    src: "/bluewave-dashboard.png",
+    src: "/dashboard.png",
     caption: "Dashboard overview with sales and category charts",
     alt: "BlueWave AI dashboard with KPI cards and charts",
   },
   {
-    src: "/bluewave-orders.png",
+    src: "/orders.png",
     caption: "Order management, filtering and order tracking",
     alt: "BlueWave AI order management screen with order tracking",
   },
   {
-    src: "/bluewave-inventory.png",
+    src: "/inventory.png",
     caption: "Inventory management with stock status",
     alt: "BlueWave AI inventory management table",
   },
