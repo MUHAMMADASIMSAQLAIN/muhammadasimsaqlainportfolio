@@ -50,17 +50,6 @@ export const services = [
   },
 ] as const;
 
-import login from "@/assets/bluewave/login.png.asset.json";
-import dashboard from "@/assets/bluewave/dashboard.png.asset.json";
-import orders from "@/assets/bluewave/orders.png.asset.json";
-import inventory from "@/assets/bluewave/inventory.png.asset.json";
-import addProduct from "@/assets/bluewave/add-product.png.asset.json";
-import mongodb from "@/assets/bluewave/mongodb.png.asset.json";
-import n8nWorkflow from "@/assets/bluewave/n8n-workflow.png.asset.json";
-import voiceAgent from "@/assets/bluewave/voice-agent.png.asset.json";
-import agentTools from "@/assets/bluewave/agent-tools.png.asset.json";
-import knowledgeBase from "@/assets/bluewave/knowledge-base.png.asset.json";
-
 export type Screenshot = { src: string; caption: string; alt: string };
 
 export type Project = {
@@ -79,52 +68,52 @@ export type Project = {
 
 const bluewaveScreenshots: Screenshot[] = [
   {
-    src: login.url,
+    src: "/bluewave-login.png",
     caption: "Customer portal sign-in",
     alt: "BlueWave AI customer portal login screen",
   },
   {
-    src: dashboard.url,
+    src: "/bluewave-dashboard.png",
     caption: "Dashboard overview with sales and category charts",
     alt: "BlueWave AI dashboard with KPI cards and charts",
   },
   {
-    src: orders.url,
+    src: "/bluewave-orders.png",
     caption: "Order management, filtering and order tracking",
     alt: "BlueWave AI order management screen with order tracking",
   },
   {
-    src: inventory.url,
+    src: "/bluewave-inventory.png",
     caption: "Inventory management with stock status",
     alt: "BlueWave AI inventory management table",
   },
   {
-    src: addProduct.url,
+    src: "/add-product.png",
     caption: "Add product modal and low stock alerts",
     alt: "BlueWave AI add product dialog over the inventory table",
   },
   {
-    src: mongodb.url,
+    src: "/mongodb.png",
     caption: "MongoDB collections: inventory, orders, invoices, users",
     alt: "MongoDB Compass showing the BlueWave AI inventory database",
   },
   {
-    src: n8nWorkflow.url,
+    src: "/n8n-workflow.png",
     caption: "n8n workflows for stock check, order booking and tracking",
     alt: "n8n workflow canvas with AI agent nodes and webhook responses",
   },
   {
-    src: voiceAgent.url,
+    src: "/voice-agent.png",
     caption: "Voice AI order receptionist configuration",
     alt: "ElevenLabs agent configuration with system prompt and voice settings",
   },
   {
-    src: agentTools.url,
+    src: "/agent-tools.png",
     caption: "Agent tools wired to n8n webhooks",
     alt: "Agent tools list with stock availability, order booking and invoice tools",
   },
   {
-    src: knowledgeBase.url,
+    src: "/knowledge-base.png",
     caption: "RAG knowledge base documents",
     alt: "Agent knowledge base with order and inventory management documents",
   },
