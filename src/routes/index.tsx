@@ -9,9 +9,9 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Certifications } from "@/components/portfolio/Certifications";
 import { Contact } from "@/components/portfolio/Contact";
 
-const TITLE = "Muhammad Asim Saqlain — AI Automation Engineer | AI Agents, n8n, RAG";
+const TITLE = "Muhammad Asim Saqlain — AI Engineer & Agentic AI Developer";
 const DESCRIPTION =
-  "AI Automation Engineer building AI agents, n8n automations, RAG systems, voice AI workflows and Python/FastAPI backends for real business operations.";
+  "AI Engineer building agentic AI workflows, LLM integrations, RAG systems, voice AI automations and Python backends. Explore projects, source repositories and the ASIM SAQLAIN Perfumes digital product.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
