@@ -3,11 +3,14 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, X } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { UPWORK_URL, projects } from "@/lib/portfolio/data";
+import { perfumeProject } from "@/lib/portfolio/perfume-project";
 import { handleExternalClick } from "@/lib/portfolio/links";
+
+const allProjects = [...projects, perfumeProject];
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
-    const project = projects.find((p) => p.slug === params.slug);
+    const project = allProjects.find((p) => p.slug === params.slug);
     if (!project) throw notFound();
     return project;
   },
@@ -38,7 +41,6 @@ function CaseStudy() {
   const shots = p.screenshots ?? [];
   const current = active !== null ? shots[active] : null;
 
-
   return (
     <div className="dark min-h-screen bg-background text-foreground antialiased">
       <Nav />
@@ -68,6 +70,28 @@ function CaseStudy() {
                 </li>
               ))}
             </ul>
+            {p.slug === "asim-saqlain-perfumes" && (
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="https://asim-saqlain-perfume.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
+                >
+                  Visit Live Storefront
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://github.com/MUHAMMADASIMSAQLAIN/asim-saqlain-perfume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-semibold text-foreground hover:bg-surface-elevated transition"
+                >
+                  View Source on GitHub
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            )}
           </header>
 
           {p.screenshots && p.screenshots.length > 0 && (
@@ -181,7 +205,7 @@ function CaseStudy() {
           <nav aria-label="Other projects" className="mt-16">
             <h2 className="font-display text-xl font-semibold">Other case studies</h2>
             <ul className="mt-5 grid sm:grid-cols-2 gap-3">
-              {projects
+              {allProjects
                 .filter((o) => o.slug !== p.slug)
                 .map((o) => (
                   <li key={o.slug}>
