@@ -6,7 +6,7 @@ import { UPWORK_URL, projects } from "@/lib/portfolio/data";
 import { perfumeProject } from "@/lib/portfolio/perfume-project";
 import { handleExternalClick } from "@/lib/portfolio/links";
 
-const allProjects = [...projects, perfumeProject];
+const allProjects = [projects[0], perfumeProject, ...projects.slice(1)];
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
