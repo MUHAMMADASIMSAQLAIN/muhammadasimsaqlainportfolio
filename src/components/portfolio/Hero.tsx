@@ -3,7 +3,7 @@ import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { HeroVisual } from "./HeroVisual";
 import { handleExternalClick } from "@/lib/portfolio/links";
 
-const highlights = ["AI Agents", "n8n Automation", "RAG Systems", "LLM Integration", "FastAPI"];
+const highlights = ["Agentic AI", "AI Agents", "LLM & RAG", "n8n Automation", "Python APIs"];
 
 export function Hero() {
   return (
@@ -28,7 +28,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full rounded-full bg-primary animate-status-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Available for AI Automation &amp; Agentic AI projects
+            Building AI agents and practical automation systems
           </div>
 
           <h1
@@ -37,10 +37,10 @@ export function Hero() {
           >
             <span className="text-foreground">{profile.name}</span>
             <span className="mt-4 block text-xl font-semibold leading-snug sm:text-2xl md:text-3xl">
-              <span className="text-gradient">AI Automation Engineer</span>
+              <span className="text-gradient">AI Engineer &amp; Agentic AI Developer</span>
               <span className="text-muted-foreground">
                 {" "}
-                | AI Agents | n8n | RAG | LLM Integration
+                | LLMs | RAG | AI Agents | Automation
               </span>
             </span>
           </h1>
