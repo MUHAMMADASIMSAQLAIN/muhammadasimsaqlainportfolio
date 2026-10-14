@@ -17,7 +17,7 @@ export const Route = createFileRoute("/projects/$slug")({
       : "Case study | Muhammad Asim Saqlain";
     const description = loaderData
       ? loaderData.solution.slice(0, 155)
-      : "AI automation case study by Muhammad Asim Saqlain, AI Automation Engineer.";
+      : "AI automation case study by Muhammad Asim Saqlain, AI Engineer.";
     return {
       meta: [
         { title },
