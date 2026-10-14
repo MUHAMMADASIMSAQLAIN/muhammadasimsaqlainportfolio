@@ -89,6 +89,35 @@ export function Projects() {
             </article>
           ))}
         </div>
+
+        <div className="mt-20 border-t border-border pt-10">
+          <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight">
+            Selected <span className="text-gradient">GitHub repositories</span>
+          </h3>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Source repositories for selected AI, data and product work, all linked to the public GitHub account.
+          </p>
+          <ul className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { name: "AI Business Management Platform", description: "Inventory and supply-chain management", href: "https://github.com/MUHAMMADASIMSAQLAIN/Z3W-AI-Powered-Real-Time-Business-Management-Platform-for-Inventory-and-Supply-Chain-Automation" },
+              { name: "Data Analytics & BI Portfolio", description: "Analytics and business intelligence projects", href: "https://github.com/MUHAMMADASIMSAQLAIN/Data-Analytics-and-Business-Intelligence-PORTFOLIO" },
+              { name: "Microsoft Power BI", description: "Dashboards and reporting work", href: "https://github.com/MUHAMMADASIMSAQLAIN/Microsoft-Power-Bi" },
+              { name: "Artificial Intelligence using Python", description: "Python-based AI learning and projects", href: "https://github.com/MUHAMMADASIMSAQLAIN/Artificial-Intelligence-using-Python" },
+              { name: "ASIM SAQLAIN Perfumes", description: "Independent branded storefront", href: "https://github.com/MUHAMMADASIMSAQLAIN/asim-saqlain-perfume" },
+              { name: "Developer Portfolio", description: "Portfolio source code", href: "https://github.com/MUHAMMADASIMSAQLAIN/muhammadasimsaqlainportfolio" },
+            ].map((repo) => (
+              <li key={repo.href}>
+                <a href={repo.href} target="_blank" rel="noopener noreferrer" className="group flex h-full items-start justify-between gap-3 rounded-xl border border-border bg-surface/50 p-4 transition hover:border-primary/60 hover:bg-surface-elevated">
+                  <span>
+                    <span className="block font-medium text-foreground">{repo.name}</span>
+                    <span className="mt-1 block text-sm text-muted-foreground">{repo.description}</span>
+                  </span>
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary" aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
