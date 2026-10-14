@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317",
   github: "https://github.com/MUHAMMADASIMSAQLAIN",
   valueProp:
-    "I build AI agents, RAG systems, voice AI and workflow automations that connect LLMs to real business processes — backed by production-ready Python/FastAPI services.",
+    "Aspiring AI engineer building practical AI solutions — intelligent agents, RAG systems, automation workflows and data-driven applications with Python, LLMs and FastAPI.",
 };
 
 export const services = [

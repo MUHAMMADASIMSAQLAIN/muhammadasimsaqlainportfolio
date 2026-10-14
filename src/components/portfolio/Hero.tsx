@@ -1,9 +1,9 @@
-import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Github } from "lucide-react";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { HeroVisual } from "./HeroVisual";
 import { handleExternalClick } from "@/lib/portfolio/links";
 
-const highlights = ["AI Agents", "n8n Automation", "RAG Systems", "LLM Integration", "FastAPI"];
+const highlights = ["Python & ML", "AI Agents", "RAG", "LangChain & MCP", "n8n", "FastAPI"];
 
 export function Hero() {
   return (
@@ -37,10 +37,10 @@ export function Hero() {
           >
             <span className="text-foreground">{profile.name}</span>
             <span className="mt-4 block text-xl font-semibold leading-snug sm:text-2xl md:text-3xl">
-              <span className="text-gradient">AI Automation Engineer</span>
+              <span className="text-gradient">AI Engineer</span>
               <span className="text-muted-foreground">
                 {" "}
-                | AI Agents | n8n | RAG | LLM Integration
+                | Agentic AI Developer | Generative AI &amp; Automation
               </span>
             </span>
           </h1>
@@ -78,6 +78,16 @@ export function Hero() {
                 className="h-4.5 w-4.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 aria-hidden="true"
               />
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleExternalClick}
+              aria-label="GitHub profile"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border border-border px-5 py-3.5 text-[15px] font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+            >
+              <Github className="h-4.5 w-4.5" aria-hidden="true" /> GitHub
             </a>
           </div>
 
