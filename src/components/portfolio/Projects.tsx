@@ -4,7 +4,7 @@ import { SectionLabel } from "./About";
 import { projects } from "@/lib/portfolio/data";
 import { perfumeProject } from "@/lib/portfolio/perfume-project";
 
-const featuredProjects = [...projects, perfumeProject];
+const featuredProjects = [projects[0], perfumeProject, ...projects.slice(1)];
 
 export function Projects() {
   return (
