@@ -100,6 +100,14 @@ function CaseStudy() {
             </Block>
           )}
 
+          {(p.status || p.liveUrl || p.repoUrl) && (
+            <div className="flex flex-wrap items-center gap-3">
+              {p.status && <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-wider text-muted-foreground">Status: {p.status}</span>}
+              {p.liveUrl && <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" onClick={handleExternalClick} className="rounded-full bg-gradient-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Live demo ↗</a>}
+              {p.repoUrl && <a href={p.repoUrl} target="_blank" rel="noopener noreferrer" onClick={handleExternalClick} className="rounded-full border border-border px-4 py-2 text-sm font-medium hover:text-primary">Source code ↗</a>}
+            </div>
+          )}
+
           <Block title="Problem">
             <p className="text-muted-foreground leading-relaxed">{p.problem}</p>
           </Block>
