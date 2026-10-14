@@ -2,6 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Star } from "lucide-react";
 import { SectionLabel } from "./About";
 import { projects } from "@/lib/portfolio/data";
+import { perfumeProject } from "@/lib/portfolio/perfume-project";
+
+const featuredProjects = [...projects, perfumeProject];
 
 export function Projects() {
   return (
@@ -9,15 +12,15 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionLabel>03 — Featured Projects</SectionLabel>
         <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold tracking-tighter max-w-3xl">
-          Case studies in <span className="text-gradient">AI automation</span>.
+          Case studies in <span className="text-gradient">AI automation</span> and digital products.
         </h2>
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-          Each project below shows the business problem, the solution, the architecture and the
-          exact stack used to build it.
+          Explore AI agents, automation systems, machine learning work and a separate branded
+          e-commerce product. Each case study explains the problem, solution and tools used.
         </p>
 
         <div className="mt-14 grid md:grid-cols-2 gap-5">
-          {projects.map((p, i) => (
+          {featuredProjects.map((p, i) => (
             <article
               key={p.slug}
               className={`group relative flex flex-col rounded-2xl glass p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow ${
@@ -51,14 +54,38 @@ export function Projects() {
                 ))}
               </ul>
 
-              <Link
-                to="/projects/$slug"
-                params={{ slug: p.slug }}
-                className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
-              >
-                View Case Study
-                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  to="/projects/$slug"
+                  params={{ slug: p.slug }}
+                  className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition"
+                >
+                  View Case Study
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+                {p.slug === "asim-saqlain-perfumes" && (
+                  <>
+                    <a
+                      href="https://asim-saqlain-perfume.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-surface/60 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-primary/50 transition"
+                    >
+                      Visit Live Storefront
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                    <a
+                      href="https://github.com/MUHAMMADASIMSAQLAIN/asim-saqlain-perfume"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-surface/60 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-primary/50 transition"
+                    >
+                      Source on GitHub
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  </>
+                )}
+              </div>
             </article>
           ))}
         </div>
