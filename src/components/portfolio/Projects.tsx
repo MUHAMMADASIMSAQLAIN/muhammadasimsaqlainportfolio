@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, Github, ExternalLink } from "lucide-react";
+import { handleExternalClick } from "@/lib/portfolio/links";
 import { SectionLabel } from "./About";
 import { projects } from "@/lib/portfolio/data";
 
@@ -9,7 +10,7 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionLabel>03 — Featured Projects</SectionLabel>
         <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold tracking-tighter max-w-3xl">
-          Case studies in <span className="text-gradient">AI automation</span>.
+          Case studies in <span className="text-gradient">AI & automation</span>.
         </h2>
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
           Each project below shows the business problem, the solution, the architecture and the
@@ -38,6 +39,11 @@ export function Projects() {
                 {p.name}
               </h3>
               <p className="mt-1 text-primary text-sm">{p.tagline}</p>
+              {p.status && (
+                <span className="mt-3 inline-flex w-fit rounded-full border border-border bg-surface px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-muted-foreground">
+                  {p.status}
+                </span>
+              )}
               <p className="mt-4 text-muted-foreground leading-relaxed text-[15px]">{p.solution}</p>
 
               <ul className="mt-5 flex flex-wrap gap-2">
@@ -59,6 +65,20 @@ export function Projects() {
                 View Case Study
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+              {(p.liveUrl || p.repoUrl) && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {p.liveUrl && (
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" onClick={handleExternalClick} className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-medium hover:border-primary hover:text-primary transition">
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" /> Live demo
+                    </a>
+                  )}
+                  {p.repoUrl && (
+                    <a href={p.repoUrl} target="_blank" rel="noopener noreferrer" onClick={handleExternalClick} className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-medium hover:border-primary hover:text-primary transition">
+                      <Github className="h-3.5 w-3.5" aria-hidden="true" /> Source code
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>

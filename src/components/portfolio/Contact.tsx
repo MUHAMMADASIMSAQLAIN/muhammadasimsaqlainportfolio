@@ -95,7 +95,7 @@ export function Contact() {
         </div>
 
         <footer className="mt-12 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} {profile.name}. AI Automation Engineer.
+          © {new Date().getFullYear()} {profile.name}. AI Engineer.
         </footer>
       </div>
     </section>

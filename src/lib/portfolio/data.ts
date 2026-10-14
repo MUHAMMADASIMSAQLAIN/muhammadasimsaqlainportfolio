@@ -2,14 +2,14 @@ export const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074
 
 export const profile = {
   name: "Muhammad Asim Saqlain",
-  title: "AI Automation Engineer | AI Agents | n8n | RAG | LLM Integration",
+  title: "AI Engineer | Agentic AI Developer | Generative AI & Automation",
   location: "Chakwal, Pakistan",
   email: "asimsaqlain85@gmail.com",
   phone: "+92 316 5101890",
   linkedin: "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317",
   github: "https://github.com/MUHAMMADASIMSAQLAIN",
   valueProp:
-    "I build AI agents, RAG systems, voice AI and workflow automations that connect LLMs to real business processes — backed by production-ready Python/FastAPI services.",
+    "Aspiring AI engineer building practical AI solutions — intelligent agents, RAG systems, automation workflows and data-driven applications with Python, LLMs and FastAPI.",
 };
 
 export const services = [
@@ -64,6 +64,9 @@ export type Project = {
   stack: string[];
   role: string[];
   screenshots?: Screenshot[];
+  status?: "Completed" | "Prototype" | "In progress";
+  liveUrl?: string;
+  repoUrl?: string;
 };
 
 const bluewaveScreenshots: Screenshot[] = [
@@ -161,6 +164,8 @@ export const projects: Project[] = [
       "Python",
     ],
     screenshots: bluewaveScreenshots,
+    status: "Prototype",
+    repoUrl: "https://github.com/MUHAMMADASIMSAQLAIN/Z3W-AI-Powered-Real-Time-Business-Management-Platform-for-Inventory-and-Supply-Chain-Automation",
     role: [
       "Designed the end-to-end platform architecture and data model.",
       "Built the FastAPI backend, authentication and RBAC layer.",
@@ -168,6 +173,87 @@ export const projects: Project[] = [
       "Built the n8n automation workflows and webhook integrations.",
       "Integrated the voice AI layer and notification channels.",
     ],
+  },
+  {
+    slug: "asim-saqlain-perfumes",
+    name: "ASIM SAQLAIN Perfumes",
+    tagline: "My independent luxury fragrance brand & storefront",
+    status: "Completed",
+    liveUrl: "https://asim-saqlain-perfume.vercel.app/",
+    repoUrl: "https://github.com/MUHAMMADASIMSAQLAIN/asim-saqlain-perfume",
+    problem:
+      "A new fragrance brand needs a storefront that feels premium and tells the story of each scent, not a plain product grid.",
+    solution:
+      "A cinematic, scroll-driven brand website built with plain HTML, CSS and JavaScript: a video 'ritual' sequence tied to scroll position, a three-fragrance collection, a layered notes section and a signature Midnight Oud feature.",
+    features: [
+      "Scroll-synced video storytelling across five scenes",
+      "Collection of three Eau de Parfum compositions with notes and palettes",
+      "Top / heart / base notes accord section",
+      "Signature 'Midnight Oud' extrait showcase",
+      "Pointer-reactive visuals and responsive navigation",
+      "Deployed on Vercel",
+    ],
+    architecture: [
+      "Static site: index.html, style.css, script.js and media assets.",
+      "A requestAnimationFrame render loop maps scroll progress to video time and scene state.",
+      "Event listeners handle scroll, resize, pointer and keyboard interactions.",
+      "Hosted as a static deployment on Vercel.",
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Vercel", "Branding"],
+    role: [
+      "Created the brand concept, naming and visual identity.",
+      "Designed and built the full website.",
+      "Wrote the product copy and scent descriptions.",
+      "Deployed and maintain the live site.",
+    ],
+  },
+  {
+    slug: "data-analytics-bi",
+    name: "Data Analytics & Business Intelligence",
+    tagline: "Excel, SQL (MySQL) and Power BI dashboards",
+    status: "Completed",
+    repoUrl: "https://github.com/MUHAMMADASIMSAQLAIN/Data-Analytics-and-Business-Intelligence-PORTFOLIO",
+    problem:
+      "Raw business data is hard to act on until it is cleaned, modelled and visualised.",
+    solution:
+      "End-to-end analytics projects that take raw data through Excel and MySQL into interactive Power BI dashboards. Built during the DigiSkills Data Analytics & BI training and extended with a separate Power BI repository.",
+    features: [
+      "Data cleaning and preparation in Excel",
+      "SQL queries in MySQL for analysis",
+      "Interactive Power BI dashboards",
+      "Business insight write-ups",
+    ],
+    architecture: [
+      "Raw data cleaned in Excel.",
+      "Queried and aggregated with MySQL.",
+      "Modelled and visualised in Power BI.",
+      "Second repo: https://github.com/MUHAMMADASIMSAQLAIN/Microsoft-Power-Bi",
+    ],
+    stack: ["Excel", "MySQL", "SQL", "Power BI", "Data Visualization"],
+    role: ["Prepared the data, wrote the queries and built the dashboards."],
+  },
+  {
+    slug: "ai-using-python",
+    name: "Artificial Intelligence Using Python",
+    tagline: "Python, ML and deep learning exercises & projects",
+    status: "Completed",
+    repoUrl: "https://github.com/MUHAMMADASIMSAQLAIN/Artificial-Intelligence-using-Python",
+    problem:
+      "Building a solid base in Python and machine learning before moving into applied AI systems.",
+    solution:
+      "A central repository of academic exercises and independent data projects, from Python fundamentals and OOP to machine learning and deep learning implementations.",
+    features: [
+      "Python fundamentals and OOP",
+      "Data work with NumPy, pandas, Matplotlib and Seaborn",
+      "Machine learning with scikit-learn",
+      "Deep learning with Keras / TensorFlow",
+    ],
+    architecture: [
+      "Organised notebooks and scripts by topic.",
+      "Related repo: https://github.com/MUHAMMADASIMSAQLAIN/Python-",
+    ],
+    stack: ["Python", "NumPy", "pandas", "scikit-learn", "TensorFlow", "Keras"],
+    role: ["Wrote all exercises and projects as part of my AI learning path."],
   },
   {
     slug: "agentic-rag-assistant",
