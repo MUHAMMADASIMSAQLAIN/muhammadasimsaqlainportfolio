@@ -200,11 +200,64 @@ export const projects: Project[] = [
       "Hosted as a static deployment on Vercel.",
     ],
     stack: ["HTML", "CSS", "JavaScript", "Vercel", "Branding"],
+    screenshots: [
+      {
+        src: "/__l5e/assets-v1/ce3c7ef7-9545-45a3-b22d-d20aa82a5108/midnight-oud.jpg",
+        caption: "Midnight Oud — signature extrait de parfum brand visual",
+        alt: "ASIM SAQLAIN Midnight Oud perfume bottle brand image",
+      },
+    ],
     role: [
       "Created the brand concept, naming and visual identity.",
       "Designed and built the full website.",
       "Wrote the product copy and scent descriptions.",
       "Deployed and maintain the live site.",
+    ],
+  },
+  {
+    slug: "muntaha-home-kitchen",
+    name: "Muntaha Home Kitchen",
+    tagline: "Full-stack homemade food ordering & delivery platform",
+    status: "Completed",
+    problem:
+      "A homemade-food business serving Islamabad and Rawalpindi needs more than a menu page — it needs ordering, payment handling, delivery coordination and customer support in one system.",
+    solution:
+      "A full-stack food ordering and delivery web application with an interactive customer storefront, daily specials, monthly meal packages, cart checkout and real-time order tracking — backed by a staff admin dashboard, a live rider/delivery portal, payment submission proofs (Easypaisa, UPaisa, COD) and a Google Gemini AI voice/chat concierge for automated menu recommendations.",
+    features: [
+      "Interactive customer storefront with daily specials and monthly meal packages",
+      "Cart checkout and real-time order tracking",
+      "Staff admin dashboard for menu and order management",
+      "Live rider / delivery portal",
+      "Payment submission proofs: Easypaisa, UPaisa and cash on delivery",
+      "Google Gemini AI voice & chat concierge for menu recommendations",
+    ],
+    architecture: [
+      "HTML5 / CSS / JavaScript frontend served as a static storefront on Vercel.",
+      "FastAPI backend exposes menu, order, payment and delivery endpoints.",
+      "MongoDB Atlas stores menus, orders, payments and rider state.",
+      "Gemini Flash API powers the voice/chat concierge for menu recommendations.",
+      "Source kept in a private GitHub repository.",
+    ],
+    stack: [
+      "Python",
+      "FastAPI",
+      "MongoDB Atlas",
+      "Gemini Flash API",
+      "HTML5 / CSS / JavaScript",
+      "Vercel",
+    ],
+    screenshots: [
+      {
+        src: "/__l5e/assets-v1/fa79c25c-38a1-4112-b15b-0fd6070a5ebd/muntaha-home-kitchen.jpg",
+        caption: "Muntaha Home Kitchen — brand visual",
+        alt: "Muntaha Home Kitchen brand image with chicken biryani in a copper pot",
+      },
+    ],
+    role: [
+      "Designed and built the full-stack application end to end.",
+      "Built the FastAPI backend and MongoDB Atlas data model.",
+      "Implemented the admin dashboard and rider/delivery portal.",
+      "Integrated the Gemini AI concierge and payment proof flows.",
     ],
   },
   {
