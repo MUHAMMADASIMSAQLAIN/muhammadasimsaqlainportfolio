@@ -57,6 +57,7 @@ export type Project = {
   name: string;
   tagline: string;
   featured?: boolean;
+  cover?: string;
   problem: string;
   solution: string;
   features: string[];
@@ -128,6 +129,7 @@ export const projects: Project[] = [
     name: "BlueWave AI",
     tagline: "AI E-Commerce & Order Automation Platform",
     featured: true,
+    cover: "/dashboard.png",
     problem:
       "E-commerce teams handle order intake, stock checks, confirmations, invoicing and follow-up reminders manually across separate tools, which slows down order handling and leaves room for missed steps.",
     solution:
