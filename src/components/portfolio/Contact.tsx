@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, ArrowUpRight, Download } from "lucide-react";
 import { SectionLabel } from "./About";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { handleExternalClick } from "@/lib/portfolio/links";
@@ -58,6 +58,14 @@ export function Contact() {
               className="inline-flex items-center gap-2 rounded-full glass px-7 py-4 text-base font-semibold text-foreground hover:bg-surface-elevated transition"
             >
               Email me
+            </a>
+            <a
+              href="/downloads/Muhammad-Asim-Saqlain-Resume.pdf"
+              download="Muhammad-Asim-Saqlain-Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-full glass px-7 py-4 text-base font-semibold text-foreground hover:bg-surface-elevated transition"
+            >
+              <Download className="h-5 w-5" aria-hidden="true" />
+              Download Résumé
             </a>
           </div>
 

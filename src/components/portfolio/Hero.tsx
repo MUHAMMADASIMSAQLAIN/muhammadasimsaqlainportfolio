@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, MapPin, Github } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Github, Download } from "lucide-react";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { HeroVisual } from "./HeroVisual";
 import { handleExternalClick } from "@/lib/portfolio/links";
@@ -88,6 +88,13 @@ export function Hero() {
               className="inline-flex min-h-12 items-center gap-2 rounded-full border border-border px-5 py-3.5 text-[15px] font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
             >
               <Github className="h-4.5 w-4.5" aria-hidden="true" /> GitHub
+            </a>
+            <a
+              href="/downloads/Muhammad-Asim-Saqlain-Resume.pdf"
+              download="Muhammad-Asim-Saqlain-Resume.pdf"
+              className="inline-flex min-h-12 items-center gap-2 rounded-full border border-border px-5 py-3.5 text-[15px] font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+            >
+              <Download className="h-4.5 w-4.5" aria-hidden="true" /> Résumé
             </a>
           </div>
 
