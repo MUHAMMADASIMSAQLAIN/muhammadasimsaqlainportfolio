@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, MapPin, Github } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Github, Download } from "lucide-react";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { HeroVisual } from "./HeroVisual";
 import { handleExternalClick } from "@/lib/portfolio/links";

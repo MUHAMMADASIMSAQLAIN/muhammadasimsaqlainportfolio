@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, ArrowUpRight, Download } from "lucide-react";
 import { SectionLabel } from "./About";
 import { UPWORK_URL, profile } from "@/lib/portfolio/data";
 import { handleExternalClick } from "@/lib/portfolio/links";
