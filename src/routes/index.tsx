@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-const TITLE = "Muhammad Asim Saqlain — Full-Stack AI Developer & Computer Vision Engineer";
+const TITLE = "Muhammad Asim Saqlain — AI & Full-Stack Engineer | RAG & Agentic AI";
 const DESCRIPTION =
-  "Muhammad Asim Saqlain, Rawalpindi: AI applications, agentic AI and RAG, computer vision and full-stack web development.";
+  "Muhammad Asim Saqlain: AI and Full-Stack Engineer specializing in RAG pipelines, MCP-based autonomous AI agents, computer vision, and FastAPI/Node.js systems.";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317";
 const GITHUB_URL = "https://github.com/MUHAMMADASIMSAQLAIN";
 const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074e";
-const EMAIL = "asimsaqlain195@gmail.com";
+const EMAIL_PRIMARY = "asimsaqlain85@gmail.com";
+const EMAIL_SECONDARY = "asimsaqlain195@gmail.com";
+const PHONE = "+92 316 5101890";
+const RESUME_PATH = "/downloads/Muhammad-Asim-Saqlain-Resume.pdf";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,12 +49,12 @@ function Index() {
     if (Object.keys(errors).length > 0) return;
 
     setFormStatus({
-      text: `Opening your email client to send message to ${EMAIL}...`,
+      text: `Opening your email client to send message to ${EMAIL_PRIMARY}...`,
       color: "#8fd19e",
     });
 
     const bodyContent = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    window.location.href = `mailto:${EMAIL_PRIMARY}?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(bodyContent)}`;
   };
@@ -102,10 +105,20 @@ function Index() {
                 Creative
               </a>
               <a href="#credentials" onClick={() => setMenuOpen(false)}>
-                Credentials
+                Experience
               </a>
               <a href="#contact" onClick={() => setMenuOpen(false)}>
                 Contact
+              </a>
+              <a
+                href={RESUME_PATH}
+                download="Muhammad-Asim-Saqlain-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn s"
+                style={{ padding: "6px 14px", fontSize: ".82rem" }}
+              >
+                Resume ↓
               </a>
               <a
                 href="#contact"
@@ -130,12 +143,22 @@ function Index() {
                 Building <span className="gold">Intelligent AI</span> Solutions &amp; Modern Web Experiences
               </h1>
               <p>
-                Full-Stack AI Developer and Computer Vision Engineer. I build AI-powered applications, agentic and RAG
-                systems, computer vision pipelines, and practical business software.
+                AI and Full-Stack Engineer who builds and deploys applications with Python (FastAPI), Node.js, and
+                MongoDB/PostgreSQL. Hands-on expertise in RAG pipelines, MCP-based autonomous AI agents, computer vision,
+                and containerized microservices.
               </p>
               <div className="cta">
                 <a className="btn p" href="#projects">
                   Explore My Projects →
+                </a>
+                <a
+                  className="btn s"
+                  href={RESUME_PATH}
+                  download="Muhammad-Asim-Saqlain-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download CV ↓
                 </a>
                 <a className="btn s" href="#contact">
                   Contact Me
@@ -154,15 +177,15 @@ function Index() {
               </div>
               <div className="stats">
                 <div className="stat">
-                  <b>6</b>
-                  <span>Certificates</span>
+                  <b>6+</b>
+                  <span>Certifications</span>
                 </div>
                 <div className="stat">
-                  <b>3</b>
-                  <span>Featured projects</span>
+                  <b>5+</b>
+                  <span>Featured systems</span>
                 </div>
                 <div className="stat">
-                  <b>BS CS</b>
+                  <b>BS CS (AI)</b>
                   <span>UIIT, 2021–2026</span>
                 </div>
               </div>
@@ -196,23 +219,24 @@ function Index() {
                 Building solutions with <span className="gold">code &amp; intelligence</span>
               </h2>
               <p>
-                I hold a Bachelor of Science in Computer Science from UIIT, PMAS Arid Agriculture University,
-                Rawalpindi (2021–2026), and I build intelligent software: full-stack web applications, LLM-powered
-                assistants, RAG and multi-agent automation, and computer vision models.
+                I hold a Bachelor of Science in Computer Science with a specialization in Artificial Intelligence from
+                UIIT, PMAS Arid Agriculture University, Rawalpindi (2021–2026). I build intelligent systems:
+                full-stack web applications, LLM-powered assistants, RAG and multi-agent automation, and computer vision
+                models.
               </p>
               <p>
-                My approach is practical. I start from a real business workflow, ship a working version, and document
-                what is finished and what still needs production setup.
+                My approach is practical and engineering-focused. I start from real business workflows, develop
+                containerized production-ready services, and document what is finished and what scales in deployment.
               </p>
               <div className="grid" style={{ marginTop: 14 }}>
                 <div className="card" style={{ padding: 14 }}>
-                  AI-driven problem solving
+                  AI-driven problem solving &amp; autonomous agents
                 </div>
                 <div className="card" style={{ padding: 14 }}>
-                  Scalable full-stack engineering
+                  Scalable full-stack backend engineering (FastAPI / Node.js)
                 </div>
                 <div className="card" style={{ padding: 14 }}>
-                  Clean, maintainable, user-focused software
+                  Clean, containerized, and maintainable software
                 </div>
               </div>
             </div>
@@ -229,36 +253,36 @@ function Index() {
             <p>Documented technical competencies across AI systems, full-stack engineering, and cloud platforms.</p>
             <div className="grid g4" style={{ marginTop: 18 }}>
               <div className="card">
-                <h3>Languages</h3>
-                <p>Python, JavaScript, TypeScript.</p>
+                <h3>Languages &amp; Core</h3>
+                <p>Python, JavaScript, TypeScript, Node.js, Express.js, Kotlin, SQL, HTML5, CSS3.</p>
               </div>
               <div className="card">
-                <h3>Frontend</h3>
-                <p>React, TanStack Start, Vite, Tailwind CSS, vanilla JavaScript.</p>
+                <h3>Frontend Engineering</h3>
+                <p>React, TanStack Start, Vite, Tailwind CSS, Responsive Design, UI/UX Layout.</p>
               </div>
               <div className="card">
-                <h3>Backend &amp; APIs</h3>
-                <p>FastAPI, REST API development.</p>
+                <h3>Backend &amp; Cloud</h3>
+                <p>FastAPI, Flask, REST APIs, Docker, PostgreSQL, Supabase (pgvector), MongoDB Atlas, Pinecone, Firebase, AWS.</p>
               </div>
               <div className="card">
-                <h3>AI &amp; LLM</h3>
-                <p>Gemini AI, RAG, agentic AI, prompt engineering, MCP integrations.</p>
+                <h3>AI &amp; LLM Engineering</h3>
+                <p>RAG, AI Agents, Tool Calling, Model Context Protocol (MCP), LangChain, AutoGen, OpenAI API, Gemini API, Vector Embeddings, Pydantic.</p>
               </div>
               <div className="card">
-                <h3>Computer Vision</h3>
-                <p>YOLO (Nano), dataset augmentation, vehicle detection.</p>
+                <h3>Machine Learning &amp; CV</h3>
+                <p>YOLOv8, OpenCV, TensorFlow, PyTorch, Scikit-learn, Keras, Roboflow, Pandas, Data Augmentation.</p>
               </div>
               <div className="card">
-                <h3>Data &amp; Databases</h3>
-                <p>MongoDB, Supabase pgvector, Power BI, data analytics.</p>
+                <h3>Workflow Automation</h3>
+                <p>n8n, Zapier, Webhooks, JSON Parsing, ETL Pipelines, Data Validation, Airtable, Google Sheets.</p>
               </div>
               <div className="card">
-                <h3>Automation</h3>
-                <p>n8n, Zapier, multi-agent workflows.</p>
+                <h3>Security &amp; Auth</h3>
+                <p>JWT (Access/Refresh Tokens), Role-Based Access Control (RBAC), bcrypt, REST API Security.</p>
               </div>
               <div className="card">
-                <h3>Cloud, Tools &amp; Networking</h3>
-                <p>AWS, Google Cloud Platform (GCP), Vercel, Git, GitHub, Cisco CCNA training, cyber security basics.</p>
+                <h3>Tools &amp; DevOps</h3>
+                <p>Git, GitHub, Docker, Postman, Linux Terminal, Figma, Vercel CI/CD.</p>
               </div>
             </div>
           </div>
@@ -274,32 +298,32 @@ function Index() {
             <div className="grid g3" style={{ marginTop: 18 }}>
               <a href="#projects" className="card">
                 <h3>Full-Stack Web Applications</h3>
-                <p>Ordering, admin and brand websites with Python or JavaScript back ends.</p>
+                <p>Ordering, admin and brand websites with Python (FastAPI) or Node.js back ends.</p>
                 <span className="link">See related work →</span>
               </a>
               <a href="#projects" className="card">
                 <h3>AI &amp; LLM Applications</h3>
-                <p>Assistants and tools built on LLM APIs such as Gemini.</p>
+                <p>Autonomous tool-calling assistants built on Gemini, OpenAI, and MCP protocols.</p>
                 <span className="link">See related work →</span>
               </a>
               <a href="#projects" className="card">
                 <h3>Agentic AI &amp; RAG Systems</h3>
-                <p>Retrieval-augmented assistants and multi-agent orchestration.</p>
+                <p>High-accuracy semantic retrieval, Supabase pgvector pipelines, and multi-agent systems.</p>
                 <span className="link">See related work →</span>
               </a>
               <a href="#projects" className="card">
                 <h3>Computer Vision Solutions</h3>
-                <p>Object detection models trained and evaluated on custom data.</p>
+                <p>Real-time YOLOv8 object and license plate detection models trained on custom datasets.</p>
                 <span className="link">See related work →</span>
               </a>
               <a href="#projects" className="card">
                 <h3>Workflow Automation &amp; APIs</h3>
-                <p>n8n, Zapier, MCP and FastAPI integrations.</p>
+                <p>n8n, Zapier, Webhooks, MCP, and high-throughput FastAPI integrations.</p>
                 <span className="link">See related work →</span>
               </a>
               <a href="#projects" className="card">
                 <h3>Dashboards &amp; Analytics</h3>
-                <p>Business intelligence and Power BI reporting.</p>
+                <p>Business intelligence, MongoDB/PostgreSQL pipelines, and Power BI reporting.</p>
                 <span className="link">See related work →</span>
               </a>
             </div>
@@ -493,6 +517,86 @@ function Index() {
                   >
                     Live Demo ↗
                   </a>
+                </div>
+              </div>
+
+              {/* PROJECT 4: AGENTIC AI RAG ASSISTANT */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.15rem" }}>Agentic AI &amp; RAG Context Retrieval Pipeline</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px", whiteSpace: "nowrap" }}>
+                    Production Architecture · MCP
+                  </span>
+                </div>
+                <p style={{ fontSize: ".88rem", lineHeight: 1.5, margin: ".6em 0" }}>
+                  Built RAG pipelines using Supabase pgvector for namespace-isolated semantic retrieval, dynamic chunking,
+                  and context injection. Developed autonomous AI agents with dynamic tool calling and multi-step reasoning
+                  using Model Context Protocol (MCP). Exposed production-ready FastAPI endpoints with structured error handling
+                  for deterministic JSON responses.
+                </p>
+                <div className="tags">
+                  {[
+                    "LangChain",
+                    "FastAPI",
+                    "Supabase pgvector",
+                    "MCP Protocol",
+                    "OpenAI API",
+                    "Google AI Studio",
+                    "Docker",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* PROJECT 5: BLUEWAVE AI PLATFORM */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.15rem" }}>BlueWave AI E-Commerce Platform</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px", whiteSpace: "nowrap" }}>
+                    Graded 'A' · Autonomous Multi-Agent System
+                  </span>
+                </div>
+                <p style={{ fontSize: ".88rem", lineHeight: 1.5, margin: ".6em 0" }}>
+                  Designed and deployed a full-stack AI-powered e-commerce platform incorporating autonomous AI agents for
+                  business and customer workflows (Final Year Project, graded 'A'). Built scalable REST APIs with FastAPI,
+                  containerized with Docker, MongoDB Atlas persistence, JWT authentication with RBAC, and multi-agent n8n
+                  workflows for LLM reasoning and ElevenLabs voice synthesis.
+                </p>
+                <div className="tags">
+                  {[
+                    "FastAPI",
+                    "Docker",
+                    "MongoDB Atlas",
+                    "n8n Workflows",
+                    "Gemini API",
+                    "ElevenLabs",
+                    "JWT / RBAC",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -691,25 +795,53 @@ function Index() {
           </div>
         </section>
 
-        {/* 06 · EDUCATION & CREDENTIALS */}
+        {/* 06 · EXPERIENCE & EDUCATION */}
         <section id="credentials">
           <div className="wrap">
-            <div className="eyebrow">06 · EDUCATION &amp; CREDENTIALS</div>
+            <div className="eyebrow">06 · EXPERIENCE &amp; CREDENTIALS</div>
             <h2>
-              Education &amp; <span className="gold">certifications</span>
+              Experience, Education &amp; <span className="gold">certifications</span>
             </h2>
             <p>
-              Formal degree education, certified technical training, and documented industry credentials.
+              Professional engineering engagements, formal academic degree, and documented industry credentials.
             </p>
-            <div className="tl" style={{ marginTop: 20 }}>
+            <div className="tl" style={{ marginTop: 24 }}>
+              {/* FREELANCE EXPERIENCE */}
               <div className="it">
-                <small>2021 — 2026</small>
-                <h3>Bachelor of Science in Computer Science (BS CS)</h3>
+                <small>JAN 2024 — PRESENT</small>
+                <h3>Full-Stack AI and Computer Vision Developer (Freelance)</h3>
+                <p style={{ color: "var(--gold2)", fontSize: ".85rem", marginTop: 2 }}>
+                  Self-Employed · Remote &amp; Contract Engagements
+                </p>
                 <p>
-                  University Institute of Information Technology (UIIT), PMAS Arid Agriculture University, Rawalpindi.
-                  Graduation: 2026.
+                  • Built production RAG pipelines and autonomous AI agents using LangChain, Supabase pgvector, and Model Context Protocol (MCP) tool calling.
+                </p>
+                <p>
+                  • Developed scalable FastAPI and Node.js backends and containerized services with Docker for reproducible deployments.
+                </p>
+                <p>
+                  • Integrated OpenAI and Gemini APIs into pipelines for classification, structured data extraction, and conversational workflows.
+                </p>
+                <p>
+                  • Designed and built enterprise n8n automation workflows connecting webhooks, REST APIs, LLMs, and databases.
+                </p>
+                <p>
+                  • Trained and deployed real-time YOLOv8 and OpenCV computer vision models for automated object detection.
                 </p>
               </div>
+
+              {/* DEGREE */}
+              <div className="it">
+                <small>2021 — 2026</small>
+                <h3>Bachelor of Science in Computer Science (Artificial Intelligence)</h3>
+                <p>
+                  University Institute of Information Technology (UIIT), PMAS Arid Agriculture University, Rawalpindi.
+                  Graduation: 2026. Relevant Coursework: Artificial Intelligence, Computer Vision, Data Mining, Machine Learning,
+                  Deep Learning, Software Engineering, Database Management Systems, Design and Analysis of Algorithms.
+                </p>
+              </div>
+
+              {/* CERTIFICATIONS */}
               <div className="it">
                 <small>ISSUED 25 JUL 2024</small>
                 <h3>Artificial Intelligence using Python</h3>
@@ -819,8 +951,11 @@ function Index() {
               </form>
               <div className="card" id="contactInfo">
                 <h3>Contact details</h3>
-                <p style={{ margin: "6px 0 14px 0" }}>
+                <p style={{ margin: "6px 0 10px 0" }}>
                   <strong>Location:</strong> Rawalpindi, Punjab, Pakistan
+                </p>
+                <p style={{ margin: "4px 0 14px 0" }}>
+                  <strong>Phone:</strong> <a href={`tel:${PHONE.replace(/\s+/g, '')}`} className="gold">{PHONE}</a>
                 </p>
                 <div className="soc" style={{ marginBottom: 14 }}>
                   <a
@@ -841,12 +976,29 @@ function Index() {
                     Upwork
                   </a>
                 </div>
-                <p style={{ marginTop: 12 }}>
-                  <a href={`mailto:${EMAIL}`} className="gold" style={{ fontWeight: 600 }}>
-                    {EMAIL}
+                <p style={{ marginTop: 12, marginBottom: 4 }}>
+                  <a href={`mailto:${EMAIL_PRIMARY}`} className="gold" style={{ fontWeight: 600 }}>
+                    {EMAIL_PRIMARY}
                   </a>
                 </p>
-                <p style={{ fontSize: ".84rem", color: "var(--mute)", marginTop: 8 }}>
+                <p style={{ margin: "4px 0 12px 0" }}>
+                  <a href={`mailto:${EMAIL_SECONDARY}`} className="gold" style={{ fontSize: ".9rem", opacity: .9 }}>
+                    {EMAIL_SECONDARY}
+                  </a>
+                </p>
+                <div style={{ marginTop: 16 }}>
+                  <a
+                    href={RESUME_PATH}
+                    download="Muhammad-Asim-Saqlain-Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn p"
+                    style={{ padding: "8px 16px", fontSize: ".85rem" }}
+                  >
+                    Download Official CV (PDF) ↓
+                  </a>
+                </div>
+                <p style={{ fontSize: ".84rem", color: "var(--mute)", marginTop: 14 }}>
                   Available for full-time engineering roles, contracts, and freelance projects.
                 </p>
               </div>
