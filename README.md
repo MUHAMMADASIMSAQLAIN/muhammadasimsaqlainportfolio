@@ -1,6 +1,6 @@
 # Asim's Digital Portfolio
 
-www.linkedin.com/in/muhammad-asim-saqlain-8ab182317  THIS THE link of my linkdin profile we want to make the portfolio using this create the portfoloi website for me
+www.linkedin.com/in/muhammad-asim-saqlain  THIS THE link of my linkdin profile we want to make the portfolio using this create the portfoloi website for me
 
 This project was built with [Lovable](https://lovable.dev).
 

@@ -6,7 +6,7 @@ export const profile = {
   location: "Chakwal, Pakistan",
   email: "asimsaqlain85@gmail.com",
   phone: "+92 316 5101890",
-  linkedin: "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317",
+  linkedin: "https://www.linkedin.com/in/muhammad-asim-saqlain",
   github: "https://github.com/MUHAMMADASIMSAQLAIN",
   valueProp:
     "Aspiring AI engineer building practical AI solutions — intelligent agents, RAG systems, automation workflows and data-driven applications with Python, LLMs and FastAPI.",
