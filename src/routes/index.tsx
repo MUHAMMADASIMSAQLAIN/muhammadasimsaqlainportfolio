@@ -60,11 +60,11 @@ function Index() {
             <a href="#home" className="logo">
               <span className="mono">
                 <img
-                  src="/assets/logo.jpg"
+                  src="/assets/logo.png"
                   alt="Logo"
                   width="38"
                   height="38"
-                  style={{ objectFit: "cover", borderRadius: 6 }}
+                  style={{ objectFit: "contain" }}
                 />
               </span>
               <span>Asim Saqlain</span>
@@ -672,11 +672,11 @@ function Index() {
         <div className="wrap">
           <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             <img
-              src="/assets/logo.jpg"
+              src="/assets/logo.png"
               alt="Logo"
               width="28"
               height="28"
-              style={{ objectFit: "cover", borderRadius: 6 }}
+              style={{ objectFit: "contain" }}
             />{" "}
             © {new Date().getFullYear()} Muhammad Asim Saqlain
           </span>
