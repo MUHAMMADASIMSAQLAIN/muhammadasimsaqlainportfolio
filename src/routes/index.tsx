@@ -60,7 +60,7 @@ function Index() {
             <a href="#home" className="logo">
               <span className="mono">
                 <img
-                  src="/assets/logo.png"
+                  src="/assets/logo.png?v=2"
                   alt="Logo"
                   width="38"
                   height="38"
@@ -169,7 +169,7 @@ function Index() {
             </div>
             <div className="orb" role="img" aria-label="Portrait of Muhammad Asim Saqlain">
               <img
-                src="/assets/profile.jpg"
+                src="/assets/profile.jpg?v=2"
                 alt="Muhammad Asim Saqlain"
                 width="480"
                 height="480"
@@ -184,7 +184,7 @@ function Index() {
           <div className="wrap grid g2" style={{ alignItems: "center" }}>
             <div className="orb" style={{ maxWidth: 320, borderRadius: 20 }}>
               <img
-                src="/assets/profile.jpg"
+                src="/assets/profile.jpg?v=2"
                 alt="Muhammad Asim Saqlain"
                 loading="lazy"
                 style={{ borderRadius: 20, objectFit: "cover", width: "100%", height: "100%" }}
@@ -319,7 +319,7 @@ function Index() {
                 <div>
                   <div className="shot">
                     <img
-                      src="/assets/dental.jpg"
+                      src="/assets/dental.jpg?v=2"
                       alt="Dental Clinic Management System"
                       loading="lazy"
                     />
@@ -382,7 +382,7 @@ function Index() {
                 <div>
                   <div className="shot">
                     <img
-                      src="/assets/muntaha.jpg"
+                      src="/assets/muntaha.jpg?v=2"
                       alt="Muntaha Home Kitchen"
                       loading="lazy"
                     />
@@ -443,7 +443,7 @@ function Index() {
                 <div>
                   <div className="shot">
                     <img
-                      src="/assets/perfume.jpg"
+                      src="/assets/perfume.jpg?v=2"
                       alt="ASIM SAQLAIN Fragrances — Luxury Perfume Brand Website"
                       loading="lazy"
                     />
