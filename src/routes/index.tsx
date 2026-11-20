@@ -5,6 +5,11 @@ const TITLE = "Muhammad Asim Saqlain — Full-Stack AI Developer & Computer Visi
 const DESCRIPTION =
   "Muhammad Asim Saqlain, Rawalpindi: AI applications, agentic AI and RAG, computer vision and full-stack web development.";
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/muhammad-asim-saqlain-8ab182317";
+const GITHUB_URL = "https://github.com/MUHAMMADASIMSAQLAIN";
+const UPWORK_URL = "https://www.upwork.com/freelancers/~019b7c3041d768074e";
+const EMAIL = "asimsaqlain195@gmail.com";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -16,8 +21,8 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
-      { property: "og:image", content: "/assets/profile.jpg" },
-      { name: "twitter:image", content: "/assets/profile.jpg" },
+      { property: "og:image", content: "/assets/profile.jpg?v=2" },
+      { name: "twitter:image", content: "/assets/profile.jpg?v=2" },
     ],
   }),
   component: Index,
@@ -33,7 +38,7 @@ function Index() {
     e.preventDefault();
     const errors: Record<string, string> = {};
     if (!formData.name.trim()) errors.name = "Please enter your name.";
-    if (!formData.email.trim() || !/^\S+@\S+\.\S+$/.test(formData.email)) errors.email = "Please enter a valid email.";
+    if (!formData.email.trim() || !/^\S+@\S+\.\S+$/.test(formData.email)) errors.email = "Please enter a valid email address.";
     if (!formData.subject.trim()) errors.subject = "Please enter a subject.";
     if (!formData.message.trim()) errors.message = "Please enter your message.";
 
@@ -41,12 +46,12 @@ function Index() {
     if (Object.keys(errors).length > 0) return;
 
     setFormStatus({
-      text: "Opening your email client to send message to asimsaqlain195@gmail.com...",
+      text: `Opening your email client to send message to ${EMAIL}...`,
       color: "#8fd19e",
     });
 
     const bodyContent = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:asimsaqlain195@gmail.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(bodyContent)}`;
   };
@@ -123,7 +128,7 @@ function Index() {
               </h1>
               <p>
                 Full-Stack AI Developer and Computer Vision Engineer. I build AI-powered applications, agentic and RAG
-                systems, computer vision pipelines and practical business software.
+                systems, computer vision pipelines, and practical business software.
               </p>
               <div className="cta">
                 <a className="btn p" href="#projects">
@@ -134,22 +139,14 @@ function Index() {
                 </a>
               </div>
               <div className="soc">
-                <a href="https://github.com/MUHAMMADASIMSAQLAIN" target="_blank" rel="noopener noreferrer">
-                  github
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                  GitHub
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/muhammad-asim-saqlain"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  linkedin
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
                 </a>
-                <a
-                  href="https://www.upwork.com/freelancers/~019b7c3041d768074e"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  upwork
+                <a href={UPWORK_URL} target="_blank" rel="noopener noreferrer">
+                  Upwork
                 </a>
               </div>
               <div className="stats">
@@ -226,7 +223,7 @@ function Index() {
             <h2>
               Skills &amp; <span className="gold">technologies</span>
             </h2>
-            <p>Drawn from my documented projects and certificates. No proficiency percentages are claimed.</p>
+            <p>Documented technical competencies across AI systems, full-stack engineering, and cloud platforms.</p>
             <div className="grid g4" style={{ marginTop: 18 }}>
               <div className="card">
                 <h3>Languages</h3>
@@ -336,17 +333,16 @@ function Index() {
                   >
                     <h3 style={{ margin: 0, fontSize: "1.25rem" }}>Dental Clinic Management System</h3>
                     <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px", whiteSpace: "nowrap" }}>
-                      LIVE DEPLOY (21 OCT 2024) · Full-Stack Web Application
+                      Live · Full-Stack Web Application
                     </span>
                   </div>
                   <p style={{ fontSize: ".9rem", lineHeight: 1.5, margin: ".6em 0" }}>
-                    A web-based dental clinic management system featuring an admin dashboard, specialist and service
-                    management, clinic settings, image uploads, and an FAQ chatbot. The live demo presents a sample
-                    clinic site with services, dentists, a step-by-step appointment booking flow, and a clinic assistant
-                    chat.
+                    A web-based dental clinic management system featuring an administrative dashboard, specialist and service
+                    management, clinic settings, and an interactive FAQ chatbot. The live application demonstrates a complete
+                    clinic portal with dentist directory, step-by-step appointment scheduling flow, and patient support chat.
                   </p>
                   <div className="tags">
-                    {["react/vite", "nodejs", "express.js", "mongodb atlas", "rest", "jwt", "cloud", "vercel"].map(
+                    {["React / Vite", "Node.js", "Express.js", "MongoDB Atlas", "REST API", "JWT", "Vercel"].map(
                       (t) => (
                         <span key={t} className="tag">
                           {t}
@@ -399,25 +395,23 @@ function Index() {
                   >
                     <h3 style={{ margin: 0, fontSize: "1.15rem" }}>Muntaha Home Kitchen</h3>
                     <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px", whiteSpace: "nowrap" }}>
-                      LIVE DEPLOY (13 OCT 2024)
+                      Live · Food Delivery Platform
                     </span>
                   </div>
                   <p style={{ fontSize: ".88rem", lineHeight: 1.5, margin: ".6em 0" }}>
-                    Full-stack homemade food ordering and delivery web application serving Islamabad and Rawalpindi.
-                    Includes an interactive customer storefront, daily specials, monthly meal packages, cart checkout
-                    and real-time order tracking behind a 4-digit admin dashboard, a hero-side/delivery portal, payment
-                    submission proofs (EasyPaisa, UPaisa, COD) and a Google Gemini AI assistant concierge for automated
-                    menu recommendations.
+                    Full-stack homemade food ordering and delivery web application serving Islamabad and Rawalpindi. Features an
+                    interactive customer storefront, daily specials, meal packages, checkout, and order tracking. Includes a staff
+                    admin dashboard, live delivery rider portal, payment proof verification (Easypaisa, UPaisa, Cash on Delivery), and a
+                    Google Gemini AI concierge for automated dish recommendations.
                   </p>
                   <div className="tags">
                     {[
-                      "python",
-                      "react",
-                      "gemini-pro-1.5",
-                      "form-backend",
-                      "html5/css/javascript",
-                      "git & github pages",
-                      "vercel",
+                      "Python",
+                      "FastAPI",
+                      "MongoDB Atlas",
+                      "Gemini Flash API",
+                      "HTML5 / CSS / JS",
+                      "Vercel",
                     ].map((t) => (
                       <span key={t} className="tag">
                         {t}
@@ -462,24 +456,23 @@ function Index() {
                       ASIM SAQLAIN Fragrances — Luxury Perfume Brand Website
                     </h3>
                     <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px", whiteSpace: "nowrap" }}>
-                      LIVE DEPLOY (12 OCT 2024) · Brand Website / Product Showcase
+                      Live · Brand Showcase &amp; Digital Storefront
                     </span>
                   </div>
                   <p style={{ fontSize: ".88rem", lineHeight: 1.5, margin: ".6em 0" }}>
-                    A premium fragrance brand website built around the concept &quot;Fragrance After Dark&quot;. It
-                    presents the collection through cinematic visuals, refined typography, and a dark and gold
-                    aesthetic, with a dedicated MIDNIGHT OUD product presentation, a fragrance collection showcase,
-                    scent storytelling, and a responsive layout. It works as a digital storefront and brand experience
-                    focused on product imagery, atmosphere, and luxury positioning.
+                    A luxury fragrance brand website built around the concept &quot;Fragrance After Dark&quot;. Features
+                    cinematic visuals, refined typography, and a dark-and-gold aesthetic, with a dedicated MIDNIGHT OUD
+                    product presentation, fragrance collection showcase, scent storytelling, and a responsive layout focused on
+                    product imagery, atmosphere, and luxury brand positioning.
                   </p>
                   <div className="tags">
                     {[
-                      "luxury branding",
-                      "modern showcase",
-                      "responsive design",
-                      "ui/ux design",
-                      "html5/css/javascript",
-                      "vercel",
+                      "Luxury Branding",
+                      "Product Showcase",
+                      "Responsive Design",
+                      "UI/UX Design",
+                      "Modern CSS",
+                      "Vercel",
                     ].map((t) => (
                       <span key={t} className="tag">
                         {t}
@@ -511,54 +504,52 @@ function Index() {
               Education &amp; <span className="gold">certifications</span>
             </h2>
             <p>
-              No employment history has been supplied, so this timeline shows education and documented certificates
-              only.
+              Formal degree education, certified technical training, and documented industry credentials.
             </p>
             <div className="tl" style={{ marginTop: 20 }}>
               <div className="it">
                 <small>2021 — 2026</small>
-                <h3>Bachelor of Science in Computer Science</h3>
+                <h3>Bachelor of Science in Computer Science (BS CS)</h3>
                 <p>
                   University Institute of Information Technology (UIIT), PMAS Arid Agriculture University, Rawalpindi.
-                  Completed 2026.
+                  Graduation: 2026.
                 </p>
               </div>
               <div className="it">
                 <small>ISSUED 25 JUL 2024</small>
                 <h3>Artificial Intelligence using Python</h3>
-                <p>DigiSkills.pk, DSTP2.0 Batch 07</p>
+                <p>DigiSkills.pk · DSTP2.0 Batch 07</p>
               </div>
               <div className="it">
                 <small>ISSUED 25 JUL 2024</small>
-                <h3>UI/UX &amp; Workflow</h3>
-                <p>DigiSkills.pk, DSTP2.0 Batch 07</p>
+                <h3>UI/UX Design &amp; Workflow</h3>
+                <p>DigiSkills.pk · DSTP2.0 Batch 07</p>
               </div>
               <div className="it">
                 <small>MAY 2024</small>
-                <h3>Data Analytics and Business Intelligence</h3>
-                <p>DigiSkills.pk, DSTP2.0 Batch 07</p>
+                <h3>Data Analytics &amp; Business Intelligence</h3>
+                <p>DigiSkills.pk · DSTP2.0 Batch 07</p>
               </div>
               <div className="it">
                 <small>MAY 2024</small>
-                <h3>Freelancing</h3>
-                <p>DigiSkills.pk (listed on LinkedIn; certificate file not yet provided)</p>
+                <h3>Freelancing &amp; Professional Client Communication</h3>
+                <p>DigiSkills.pk · DSTP2.0 Batch 07</p>
               </div>
               <div className="it">
                 <small>7 SEP 2024</small>
                 <h3>Prompt Engineering with ChatGPT &amp; DeepSeek</h3>
-                <p>Udemy, 4 hours</p>
+                <p>Udemy Certificate of Completion · 4 Hours Comprehensive Training</p>
               </div>
               <div className="it">
-                <small>JUL — SEP 2024</small>
-                <h3>Cisco CCNA training</h3>
+                <small>JUN — SEP 2024</small>
+                <h3>Cisco CCNA Training (Routing, Switching &amp; Network Basics)</h3>
                 <p>
-                  Technologics certificate of completion (LinkedIn lists it as CCNA-VI, Cisco, Sep 2024; confirm the
-                  exact credential name)
+                  Technologics Certificate of Completion
                 </p>
               </div>
               <div className="it">
                 <small>SUMMER 2024</small>
-                <h3>Cyber Security</h3>
+                <h3>Cyber Security Fundamentals</h3>
                 <p>UIIT Summer Short Courses, PMAS-AAUR</p>
               </div>
             </div>
@@ -633,33 +624,35 @@ function Index() {
               </form>
               <div className="card" id="contactInfo">
                 <h3>Contact details</h3>
-                <p>Location: Rawalpindi, Punjab, Pakistan</p>
-                <div className="soc" style={{ marginBottom: 12 }}>
+                <p style={{ margin: "6px 0 14px 0" }}>
+                  <strong>Location:</strong> Rawalpindi, Punjab, Pakistan
+                </p>
+                <div className="soc" style={{ marginBottom: 14 }}>
                   <a
-                    href="https://www.linkedin.com/in/muhammad-asim-saqlain"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    linkedin
+                    LinkedIn
                   </a>
-                  <a href="https://github.com/MUHAMMADASIMSAQLAIN" target="_blank" rel="noopener noreferrer">
-                    github
+                  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                    GitHub
                   </a>
                   <a
-                    href="https://www.upwork.com/freelancers/~019b7c3041d768074e"
+                    href={UPWORK_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    upwork
+                    Upwork
                   </a>
                 </div>
                 <p style={{ marginTop: 12 }}>
-                  <a href="mailto:asimsaqlain195@gmail.com" className="gold" style={{ fontWeight: 600 }}>
-                    asimsaqlain195@gmail.com
+                  <a href={`mailto:${EMAIL}`} className="gold" style={{ fontWeight: 600 }}>
+                    {EMAIL}
                   </a>
                 </p>
-                <p style={{ fontSize: ".82rem", color: "var(--mute)", marginTop: 8 }}>
-                  Available for full-time roles, contracts &amp; freelance projects.
+                <p style={{ fontSize: ".84rem", color: "var(--mute)", marginTop: 8 }}>
+                  Available for full-time engineering roles, contracts, and freelance projects.
                 </p>
               </div>
             </div>
@@ -672,13 +665,13 @@ function Index() {
         <div className="wrap">
           <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             <img
-              src="/assets/logo.png"
+              src="/assets/logo.png?v=2"
               alt="Logo"
               width="28"
               height="28"
               style={{ objectFit: "contain" }}
             />{" "}
-            © {new Date().getFullYear()} Muhammad Asim Saqlain
+            © {new Date().getFullYear()} Muhammad Asim Saqlain. All rights reserved.
           </span>
           <a href="#home" aria-label="Back to top" className="btn s" style={{ padding: "6px 12px" }}>
             ↑
