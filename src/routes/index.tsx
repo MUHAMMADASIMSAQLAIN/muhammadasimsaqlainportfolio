@@ -98,6 +98,9 @@ function Index() {
               <a href="#projects" onClick={() => setMenuOpen(false)}>
                 Projects
               </a>
+              <a href="#creative" onClick={() => setMenuOpen(false)}>
+                Creative
+              </a>
               <a href="#credentials" onClick={() => setMenuOpen(false)}>
                 Credentials
               </a>
@@ -496,10 +499,202 @@ function Index() {
           </div>
         </section>
 
-        {/* 05 · EDUCATION & CREDENTIALS */}
+        {/* 05 · CREATIVE & DIGITAL MEDIA */}
+        <section id="creative">
+          <div className="wrap">
+            <div className="eyebrow">05 · CREATIVE &amp; DIGITAL MEDIA</div>
+            <h2>
+              Design, Video Editing &amp; <span className="gold">Digital Marketing</span>
+            </h2>
+            <p>
+              High-retention visual content, brand identity systems, short-form video production, and conversion-focused growth marketing.
+            </p>
+
+            <div className="grid g2" style={{ marginTop: 24 }}>
+              {/* Card 1: Video Editing */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.2rem" }}>Video Editing &amp; Motion Production</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px" }}>
+                    CapCut · Premiere · Motion
+                  </span>
+                </div>
+                <p style={{ fontSize: ".9rem", lineHeight: 1.6, margin: ".6em 0" }}>
+                  Producing scroll-stopping, high-retention video content engineered with pattern interrupts and dynamic visual
+                  hooks within the first 3 seconds. Specialized in kinetic captions, audio mixing, atmospheric sound design (SFX),
+                  color grading, and format optimization (9:16 vertical reels, TikTok &amp; YouTube Shorts, 16:9 promos).
+                </p>
+                <div className="tags">
+                  {[
+                    "Short-Form Reels",
+                    "Kinetic Subtitles",
+                    "Sound Design & SFX",
+                    "Pacing & Visual Rhythm",
+                    "YouTube Shorts & TikTok",
+                    "16:9 Promos",
+                    "CapCut Pro",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div style={{ display: "flex", gap: 10, marginTop: 16, flexWrap: "wrap" }}>
+                  <a
+                    href="https://youtube.com/watch?v=26j4Z3ZUoUY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn p"
+                    style={{ padding: "8px 16px", fontSize: ".85rem" }}
+                  >
+                    Watch 3D Showcase ↗
+                  </a>
+                  <a
+                    href="https://youtube.com/watch?v=eXlFPS0aJ7o"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn s"
+                    style={{ padding: "8px 16px", fontSize: ".85rem" }}
+                  >
+                    Watch Poetic Mood Reel ↗
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 2: Graphic Design */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.2rem" }}>Graphic Design &amp; Brand Identity</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px" }}>
+                    Canva Pro · Photoshop · Figma
+                  </span>
+                </div>
+                <p style={{ fontSize: ".9rem", lineHeight: 1.6, margin: ".6em 0" }}>
+                  Designing high-CTR digital and print marketing collateral that commands attention while maintaining strict brand
+                  consistency. Crafting custom campaign posters, event flyers, social media kits, multi-slide educational carousels,
+                  custom thumbnails, and complete typography and visual identity systems.
+                </p>
+                <div className="tags">
+                  {[
+                    "Brand Identity",
+                    "High-CTR Thumbnails",
+                    "Social Media Kits",
+                    "Campaign Posters",
+                    "Multi-Slide Carousels",
+                    "Typography Hierarchy",
+                    "Canva Pro",
+                    "Photoshop",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 3: Digital Marketing */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.2rem" }}>Digital Marketing &amp; Social Strategy</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px" }}>
+                    Growth · Meta · YouTube · SEO
+                  </span>
+                </div>
+                <p style={{ fontSize: ".9rem", lineHeight: 1.6, margin: ".6em 0" }}>
+                  Multi-platform growth strategies across YouTube, LinkedIn, Instagram, TikTok, and Meta Business Suite. Managing
+                  audience retention curves, testing creative variants through A/B testing to maximize click-through rates (CTR),
+                  social SEO, and executing content calendars that turn viewers into engaged followers and leads.
+                </p>
+                <div className="tags">
+                  {[
+                    "Social Media Marketing",
+                    "Audience Retention",
+                    "A/B Testing Creatives",
+                    "YouTube SEO",
+                    "Meta Business Suite",
+                    "CTR Analytics",
+                    "Content Calendars",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 4: AI Multimedia */}
+              <div className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 12,
+                    marginBottom: 8,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h3 style={{ margin: 0, fontSize: "1.2rem" }}>AI-Assisted Multimedia &amp; Audio</h3>
+                  <span className="badge" style={{ fontSize: ".72rem", padding: "2px 8px" }}>
+                    Generative AI · ElevenLabs · Voice
+                  </span>
+                </div>
+                <p style={{ fontSize: ".9rem", lineHeight: 1.6, margin: ".6em 0" }}>
+                  Leveraging next-gen generative tools (Google AI Studio, ElevenLabs, Google Flow AI) for voiceover synthesis,
+                  audio cleanup, generative concept visualization, and rapid creative prototyping. Combining human storytelling
+                  intuition with AI acceleration for fast-turnaround creative campaigns.
+                </p>
+                <div className="tags">
+                  {[
+                    "AI Voice Synthesis",
+                    "ElevenLabs",
+                    "Audio Mastering",
+                    "Generative Concept Art",
+                    "Stock Asset Curation",
+                    "AI Storyboarding",
+                    "Rapid Prototyping",
+                  ].map((t) => (
+                    <span key={t} className="tag">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 06 · EDUCATION & CREDENTIALS */}
         <section id="credentials">
           <div className="wrap">
-            <div className="eyebrow">05 · EDUCATION &amp; CREDENTIALS</div>
+            <div className="eyebrow">06 · EDUCATION &amp; CREDENTIALS</div>
             <h2>
               Education &amp; <span className="gold">certifications</span>
             </h2>
@@ -556,10 +751,10 @@ function Index() {
           </div>
         </section>
 
-        {/* 06 · CONTACT */}
+        {/* 07 · CONTACT */}
         <section id="contact">
           <div className="wrap">
-            <div className="eyebrow">06 · CONTACT</div>
+            <div className="eyebrow">07 · CONTACT</div>
             <h2>
               Let's build something <span className="gold">intelligent</span> together.
             </h2>
