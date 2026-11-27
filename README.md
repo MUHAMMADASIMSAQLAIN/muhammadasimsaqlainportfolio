@@ -1,26 +1,21 @@
-# Asim's Digital Portfolio
+# Muhammad Asim Saqlain — Portfolio
 
-www.linkedin.com/in/muhammad-asim-saqlain  THIS THE link of my linkdin profile we want to make the portfolio using this create the portfoloi website for me
+Static two-page portfolio:
+- **Full-Stack AI & Data Science Engineering** (`/`)
+- **AI Content & Creative Studio** (`/#studio`)
 
-This project was built with [Lovable](https://lovable.dev).
+## Files
+- `index.html` – the whole site (HTML, CSS and JS in one file; content is stored as JSON inside it)
+- `portfolio-data.json` – readable copy of all content (profile, skills, projects, studio showcase, channels, ads)
+- `videos/` – the AI UGC-style ad videos
+- `Muhammad_Asim_Saqlain_CV.pdf` – the CV behind the Download CV buttons
+- `vercel.json` – Vercel settings
 
-**Live app**: https://muhammadasimsaqlainportfolio.lovable.app
+## Deploy on Vercel
+Import the repo, Framework Preset **Other**, empty build command, output directory = project root.
 
-## Build with Lovable
+## Editing content
+Edit the JSON inside `<script id="sdata">` in `index.html` (see `portfolio-data.json`), or ask Claude. The in-page admin panel only works inside Claude, so it is removed here.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3141c544-5f20-448c-93a1-6c17fb51226b).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## Contact form
+Set `formEndpoint` (e.g. a Formspree URL) in the `profile` data. Until then the form reports "not sent".
